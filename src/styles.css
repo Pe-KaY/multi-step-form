@@ -101,3 +101,61 @@ body {
   border-color: var(--clr-red);
   outline-color: var(--clr-red);
 }
+
+
+
+
+
+/* DONT EDIT THIS SIDE IT IS THE RESPONSIVE ZONE */
+/* REMEMBER TO GIVE YOUR CONTAINER DIVS A CLASS OF "container" */
+/* then copy the media queries at the end of this page into your css and edit it from  there */
+.container {
+    width: 100%;
+    border-radius: 20px;
+    /* padding-inline: 0.5rem; */
+    margin-inline: auto;
+  }
+  
+  /* xtra small screen */
+  @media (min-width: 475px) {
+    .container {
+      max-width: 470px;
+    }
+  }
+  /* small screens */
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+  /* medium screens */
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+  
+  /*  large screens */
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+      padding: 1rem;
+    }
+  }
+  
+  /* COPY AND USE THE MEDIA QUERIES BELOW FOR YOUR COMPONENT */
+  
+  /* xtra small screens */
+  /* @media (min-width: 475px) {
+  }
+  /*  small screens */
+  /* @media (min-width: 640px) {
+  }
+  /* medium screens */
+  /* @media (min-width: 768px) {
+  }
+  /* large screens */
+  /* @media (min-width: 1024px) {
+  }
+   */
+  

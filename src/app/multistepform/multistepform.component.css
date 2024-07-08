@@ -88,6 +88,7 @@
     justify-content: center;
     width: 30%;
     height: 100%;
+    padding: 2rem;
   }
   .form__leftSide {
     flex-direction: column;

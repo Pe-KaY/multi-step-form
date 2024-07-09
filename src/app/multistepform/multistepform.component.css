@@ -83,6 +83,10 @@
     flex-direction: row;
     height: 80%;
   }
+  .form__rightSide {
+    height: 100%;
+    background: none;
+  }
   .form__leftSide {
     background-image: url("../../assets/bg-sidebar-desktop.svg");
     background-repeat: no-repeat;

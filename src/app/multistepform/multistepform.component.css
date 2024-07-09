@@ -90,6 +90,9 @@
     height: 100%;
     padding: 2rem;
   }
+  .form__rightSide {
+    width: 70%;
+  }
   .form__leftSide {
     flex-direction: column;
     justify-content: start;

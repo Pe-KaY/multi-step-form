@@ -1,1 +1,38 @@
-<p>personalinfo works!</p>
+<div class="main-container">
+    <div class="form__rightSide_modal">
+        <div class="personalInfo__header">
+            <h1>Personal Info</h1>
+            <p>Please provide your name, email address and phone number.</p>
+        </div>
+        <div class="personalInfo__form">
+            <form>
+                <div class="personalInfo__form-inputs">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="e.g Stephen King" formControlName="name">
+                    <!-- <div *ngIf="form.controls.name.invalid && form.controls.name.touched" [class]="'error-msg'">
+                        Name is required.
+                      </div> -->
+                </div>
+                <div class="personalInfo__form-inputs">
+                    <label for="name">Email</label>
+                    <input type="email" id="email" placeholder="e.g. stephenking@lor" formControlName="email">
+                    <!-- <div *ngIf="form.controls.email.invalid && form.controls.email.touched" [class]="'error-msg'">
+                        Email is required.
+                      </div> -->
+                </div>
+                <div class="personalInfo__form-inputs">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="e.g. +1 234 567 890" formControlName="phone">
+                    <!-- <div *ngIf="form.controls.phone.invalid && form.controls.phone.touched" [class]="'error-msg'">
+                        Phone number is required.
+                      </div> -->
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="btn-background">
+        <button class="next-btn">Next Step</button>
+    </div>
+</div>
+
+

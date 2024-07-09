@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { PersonalinfoComponent } from '../personalinfo/personalinfo.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-multistepform',
   standalone: true,
-  imports: [ PersonalinfoComponent],
+  imports: [RouterOutlet],
   templateUrl: './multistepform.component.html',
   styleUrl: './multistepform.component.css'
 })

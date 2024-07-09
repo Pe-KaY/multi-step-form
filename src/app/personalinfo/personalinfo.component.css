@@ -7,7 +7,7 @@
 
 .form__rightSide_modal {
     /* max-width: 350px; */
-    width: 100%;
+    width: 80%;
     height: 80%;
     background-color: var(--clr-white);
     padding: 1.25em;
@@ -68,17 +68,15 @@
 
 /* MEDIA QUERIES */
 @media (min-width: 475px) {
-    /* .container {
+    .container {
       max-width: 470px;
-    } */
+    }
 
     .form__rightSide_modal {
-        /* max-width: 470px; */
         width: 100%;
         margin: auto;
         margin-top: -60px;
         padding: 20px;
-        background-color: blue;
     }
 
     .personalInfo__header > h1 {

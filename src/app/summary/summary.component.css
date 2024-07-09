@@ -1,21 +1,72 @@
-.component_thank-you {
+.container {
     width: 90%;
-    height: 80%;
+    height: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+}
+.component_thank-you,
+.main_summary {
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 10rem;
-
+    gap: 1rem;
+    padding: 6rem 2.2rem;
 }
+.main_summary {
+    align-items: initial;
+    padding: 2rem 1rem;
+}
+.component_subtitle {
+    font-size: .9rem;
+    font-style: italic;
+    color: #D6D9E6;
+}
+
+.component_thank-you {
+    text-align: center;
+    align-items: center;
+}
+
 .component_thank-you img {
-    width: 50%;
+    width: 50px;
     aspect-ratio: 1;
     border: none;
     border-radius: 50%;
 }
-.component_thank-you h1 {
-    font-size: 4rem;
-
+.component_thank-you h1,
+.component_title h1 {
+    font-size: 2rem;
+    color: #022959;
 }
+.component_thank-you p {
+    
+}
+
+
+@media (min-width: 768px) {
+    .component_thank-you img {
+        width: initial;
+    }
+}
+
+
+/* COPY AND USE THE MEDIA QUERIES BELOW FOR YOUR COMPONENT */
+
+/* xtra small screens */
+/* @media (min-width: 475px) {
+}
+/*  small screens */
+/* @media (min-width: 640px) {
+}
+/* medium screens */
+/* @media (min-width: 768px) {
+}
+/* large screens */
+/* @media (min-width: 1024px) {
+}
+ */

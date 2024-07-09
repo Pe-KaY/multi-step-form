@@ -17,6 +17,9 @@
   gap: 1rem;
 }
 
+.form__rightSide {
+  height: 70%;
+}
 /* steps info wrapper */
 .form__leftside-steps {
   display: flex;

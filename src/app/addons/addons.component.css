@@ -18,16 +18,59 @@
 }
 
 .addon__footer {
-  background: var(--bg-primary);
-  height: 5rem;
+  padding-block: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+
+}
+
+.addon__options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.addon__option {
   padding: 1rem;
-  background: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  border: 1px solid var(--clr-light-grey);
+  cursor: pointer;
+}
+.addon__title-and-desc {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.addon__option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--clr-light-grey);
+  accent-color: var(--clr-purple);
+}
+
+input[type="checkbox"]:checked:before {
+  color: rgb(11, 11, 11) !important;
+}
+.option__header {
+  margin-bottom: 1.5rem;
+}
+.option__title {
+  font-weight: 500;
+  color: var(--text-clr-primary);
 }
 
 /* large screens */
 @media (min-width: 1024px) {
   .addon__content-wrapper {
     background: var(--bg-primary);
+
   }
   .addon__content-wrapper {
     width: 80%;
@@ -35,11 +78,7 @@
   }
   .addon__modal {
     margin-top: 0;
+    padding: 0;
   }
-  .addon__footer {
-    background: var(--bg-primary);
-    height: 5rem;
-    padding: 1rem;
-    background: lightblue;
-  }
+
 }

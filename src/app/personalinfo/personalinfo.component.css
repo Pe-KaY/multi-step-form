@@ -41,15 +41,16 @@
 
 .btn-background {
     width: 100%;
-    height: 30%;
-    background-color: var(--clr-white);
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+
 }
 .next-btn {
     padding: 10px 20px;
     font-size: 14px;
-    display: flex;
     cursor: pointer;
-    position: fixed;
+    position: absolute;
     bottom: 10px;
     right: 20px;
     border: none;
@@ -59,6 +60,55 @@
 }
 
 /* MEDIA QUERIES */
+  /* small screens */
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+
+    /* .form__rightSide_modal {
+        max-width: 640px;
+        margin-top: -100px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .personalInfo__header {
+        font-size: 2rem;
+    }
+
+    .personalInfo__header > p {
+        font-size: 1.5rem;
+    }
+
+    .personalInfo__form-inputs {
+        margin-bottom: 25px;
+    }
+
+    .personalInfo__form-inputs > label {
+        font-size: 1.8rem;
+    }
+
+    .personalInfo__form-inputs > input {
+        font-size: 1.8rem;
+        padding: 1em;
+        border-radius: 8px;
+    }
+
+    .next-btn {
+        font-size: 1.5rem;
+        padding: 20px;
+        border-radius: 8px;
+    } */
+  }
+
+/* medium screens */
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+    }
+
 /*  large screens */
 @media (min-width: 1024px) {
     .container {
@@ -66,7 +116,22 @@
       padding: 1rem;
     }
     .form__rightSide_modal {
-        max-width: 450px;
-        /* height: auto; */
+        max-width: 500px;
+        margin-top: 10px;
+        margin: auto;
     }
+
+    .personalInfo__form-inputs{
+        margin-bottom: 8px;
+    }
+
+   
+
+    /* .next-btn {
+        position: relative;
+        top: -100%;
+        left: 30%;
+        right: 10%;
+        right: 0; 
+    } */
   }

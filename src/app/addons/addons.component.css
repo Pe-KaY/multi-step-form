@@ -1,0 +1,45 @@
+.addon__content-wrapper {
+  height: 100%;
+  width: 100%;
+  background: var(--content-bg-mobile);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.addon__modal {
+  background: var(--bg-primary);
+  width: 90%;
+  margin-inline: auto;
+  padding: 2rem;
+  height: fit-content;
+  border-radius: 20px;
+  margin-top: -100px;
+}
+
+.addon__footer {
+  background: var(--bg-primary);
+  height: 5rem;
+  padding: 1rem;
+  background: lightblue;
+}
+
+/* large screens */
+@media (min-width: 1024px) {
+  .addon__content-wrapper {
+    background: var(--bg-primary);
+  }
+  .addon__content-wrapper {
+    width: 80%;
+    margin-inline: auto;
+  }
+  .addon__modal {
+    margin-top: 0;
+  }
+  .addon__footer {
+    background: var(--bg-primary);
+    height: 5rem;
+    padding: 1rem;
+    background: lightblue;
+  }
+}

@@ -1,9 +1,10 @@
-*,::before,::after{
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 
 :root {
   /* Global colors definition */
@@ -15,6 +16,7 @@
   --clr-light-grey: #d6d9e6;
   --clr-very-light-grey: #f8f9ff;
   --clr-white: #ffffff;
+  --clr-bluish-grey: #eff5ff;
   --clr-red: #ee374a;
 
   /* utility colors  */
@@ -33,10 +35,11 @@
   --bg-secondary: var(--clr-purple);
   --bg-accent: var(--clr-very-light-grey);
   --stepper-active-bg: var(--clr-sky-blue);
+  --content-bg-mobile: var(--clr-bluish-grey);
 
   /* Mobile view font sizes*/
-  --fs-xl: 32px;
-  --fs-lg: 18px;
+  --fs-xl: 28px;
+  --fs-lg: 16px;
   --fs-md: 14px;
   --fs-sm: 12px;
 
@@ -75,8 +78,9 @@ body {
 .title {
   font-size: var(--fs-xl);
   color: var(--text-clr-primary);
-  line-height: normal;
+  line-height: 40px;
   font-weight: 700;
+  margin-bottom: .5rem;
 }
 
 .sub-title {
@@ -110,64 +114,58 @@ body {
   outline-color: var(--clr-red);
 }
 
-
-
-
-
 /* DONT EDIT THIS SIDE IT IS THE RESPONSIVE ZONE */
 /* REMEMBER TO GIVE YOUR CONTAINER DIVS A CLASS OF "container" */
 /* then copy the media queries at the end of this page into your css and edit it from  there */
 .container {
-    width: 100%;
-    border-radius: 20px;
-    /* padding-inline: 0.5rem; */
-    margin-inline: auto;
-  }
-  
-  /* xtra small screen */
-  @media (min-width: 475px) {
-    .container {
-      max-width: 470px;
-    }
-  }
-  /* small screens */
-  @media (min-width: 640px) {
-    .container {
-      max-width: 640px;
-    }
-  }
-  /* medium screens */
-  @media (min-width: 768px) {
-    .container {
-      max-width: 768px;
-    }
-  }
-  
-  /*  large screens */
-  @media (min-width: 1024px) {
+  width: 100%;
+  border-radius: 20px;
+  /* padding-inline: 0.5rem; */
+  margin-inline: auto;
+}
 
-    body{
-      align-content: center;
-    }
-    .container {
-      max-width: 1024px;
-      padding: 1rem;
-    }
+/* xtra small screen */
+@media (min-width: 475px) {
+  .container {
+    max-width: 470px;
   }
-  
-  /* COPY AND USE THE MEDIA QUERIES BELOW FOR YOUR COMPONENT */
-  
-  /* xtra small screens */
-  /* @media (min-width: 475px) {
+}
+/* small screens */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+/* medium screens */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+/*  large screens */
+@media (min-width: 1024px) {
+  body {
+    align-content: center;
+  }
+  .container {
+    max-width: 1024px;
+    padding: 1rem;
+  }
+}
+
+/* COPY AND USE THE MEDIA QUERIES BELOW FOR YOUR COMPONENT */
+
+/* xtra small screens */
+/* @media (min-width: 475px) {
   }
   /*  small screens */
-  /* @media (min-width: 640px) {
+/* @media (min-width: 640px) {
   }
   /* medium screens */
-  /* @media (min-width: 768px) {
+/* @media (min-width: 768px) {
   }
   /* large screens */
-  /* @media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   }
    */
-  

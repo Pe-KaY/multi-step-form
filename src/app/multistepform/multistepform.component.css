@@ -17,6 +17,10 @@
   gap: 1rem;
 }
 
+.form__rightSide {
+  height: 70%;
+  background-color: var(--bg-accent);
+}
 /* steps info wrapper */
 .form__leftside-steps {
   display: flex;
@@ -81,6 +85,10 @@
   .form__container {
     flex-direction: row;
     height: 80%;
+  }
+  .form__rightSide {
+    height: 100%;
+    background: none;
   }
   .form__leftSide {
     background-image: url("../../assets/bg-sidebar-desktop.svg");

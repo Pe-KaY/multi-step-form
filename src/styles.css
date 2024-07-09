@@ -68,7 +68,7 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  align-content: center;
+  /* align-content: center; */
 }
 
 /* utility classes  */
@@ -145,6 +145,10 @@ body {
   
   /*  large screens */
   @media (min-width: 1024px) {
+
+    body{
+      align-content: center;
+    }
     .container {
       max-width: 1024px;
       padding: 1rem;

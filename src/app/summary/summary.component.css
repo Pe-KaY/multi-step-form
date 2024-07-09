@@ -144,6 +144,12 @@ section.total {
     border-radius: 10px;
     height: 60%;
     padding: 0 1rem;
+
+    justify-content: center;
+    gap: 1rem;
+}
+.component_thank-you h1 {
+    margin-top: 1rem;
 }
 
 
@@ -203,6 +209,11 @@ section.total {
         margin-top: 1rem;
     }
 }
+
+/* element.style {
+    gap: 10px;
+    padding: 10px;
+} */
 
 
 

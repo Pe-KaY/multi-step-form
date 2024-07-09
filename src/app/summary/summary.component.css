@@ -2,8 +2,10 @@
     width: 100%;
     height: 100%;
 
-    /* display: flex;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* justify-content: center;
     align-items: center; */
     margin: auto;
     
@@ -60,6 +62,24 @@ section.total {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+}
+
+/* evaluate */
+.main_summary {
+    background: var(--bg-primary);
+    width: 90%;
+    margin-inline: auto;
+    padding: 1rem;
+    height: fit-content;
+    border-radius: 20px;
+    margin-top: -2rem;
+}
+
+.component_buttons {
+    background: var(--bg-primary);
+    height: 5rem;
+    padding: 1rem;
+    background: lightblue;
 }
 
 
@@ -119,3 +139,64 @@ section.total {
 /* @media (min-width: 1024px) {
 }
  */
+
+ /* HTML
+ <div class="addon__content-wrapper">
+  <div class="addon__modal">
+    <h1 class="title">Pick add-ons</h1>
+    <p class="sub-title">Add-ons help enhance your gaming experience.</p>
+  </div>
+
+  <div class="addon__footer">
+    <div class="addon__option"></div>
+  </div>
+</div>
+ */
+
+ /* CSS */
+  /* large screens */
+/* @media (min-width: 1024px) {
+    .addon__content-wrapper {
+      background: var(--bg-primary);
+    }
+    .addon__content-wrapper {
+      width: 80%;
+      margin-inline: auto;
+    }
+    .addon__modal {
+      margin-top: 0;
+    }
+    .addon__footer {
+      background: var(--bg-primary);
+      height: 5rem;
+      padding: 1rem;
+      background: lightblue;
+    }
+  } */
+
+  /* .addon__content-wrapper {
+    height: 100%;
+    width: 100%;
+    background: var(--content-bg-mobile);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .addon__modal {
+    background: var(--bg-primary);
+    width: 90%;
+    margin-inline: auto;
+    padding: 1rem;
+    height: fit-content;
+    border-radius: 20px;
+    margin-top: -2rem; **
+  }
+  
+  .addon__footer {
+    background: var(--bg-primary);
+    height: 5rem;
+    padding: 1rem;
+    background: lightblue;
+  }
+   */

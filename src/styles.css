@@ -41,7 +41,7 @@
   --fs-xl: 28px;
   --fs-lg: 16px;
   --fs-md: 14px;
-  --fs-sm: 12px;
+  --fs-sm: 12.5px;
 
   /* line heights */
   --lh-md: 25px;
@@ -56,6 +56,7 @@
     --fs-xl: 35px;
     --fs-lg: 20px;
     --lh-md: 35px;
+    --fs-sm: 14px;
   }
 }
 
@@ -100,6 +101,12 @@ body {
   color: var(--clr-grey);
 }
 
+.text-sm {
+  font-size: var(--fs-sm);
+  font-weight: 400px;
+  color: var(--clr-grey);
+}
+
 .text-dark {
   color: var(--clr-denim) !important;
 }
@@ -124,7 +131,7 @@ body {
   border-radius: 4px;
   font-weight: 500;
   font-size: var(--fs-md);
-  padding: 0.5rem;
+  padding: 0.8rem;
   outline: none;
   border: none;
   cursor: pointer;
@@ -143,6 +150,7 @@ body {
   color: white;
   border-radius: 4px;
   font-weight: 500;
+  padding: 0.8rem;
   font-size: var(--fs-lg);
 }
 

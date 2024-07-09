@@ -1,0 +1,21 @@
+.component_thank-you {
+    width: 90%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+
+}
+.component_thank-you img {
+    width: 50%;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+}
+.component_thank-you h1 {
+    font-size: 4rem;
+
+}

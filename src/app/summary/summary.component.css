@@ -54,6 +54,14 @@ h1 {
     border: none;
     border-radius: 10px;
 }
+section.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+
 /* SPECIAL CLASSES */
 .is_active {
     border-bottom: 1px solid #D6D9E6;
@@ -65,12 +73,16 @@ h1 {
     justify-content: space-between;
     align-items: center;
 }
+.component_summary_container > div > p {
+    color: #022959;
+}
 .component_summary_container > div > div :last-child {
     display: none;
 }
 .component_summary_container > div:is(.is_active) > div :last-child {
     display: block;
     color: #D6D9E6;
+    font-size: 14px;
 }
 .component_summary_container > div:is(.is_active) > div :first-child {
     font-weight: 500;
@@ -78,7 +90,6 @@ h1 {
 }
 .component_summary_container > div:is(.is_active) > :last-child {
     font-weight: 700;
-    color: #022959;
 }
 
 

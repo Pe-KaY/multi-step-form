@@ -21,15 +21,16 @@
     padding: 1.5rem 1rem;
     width: 90%;
     background: var(--bg-primary);
-    margin-inline: 1rem;
+    /* margin-inline: 1rem; */
+    margin-inline: auto;
     margin-top: -6rem;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .component_subtitle {
     font-size: .9rem;
     color: #D6D9E6;
+    color: var(--clr-grey);
 }
-
 .component_thank-you {
     text-align: center;
     align-items: center;
@@ -53,7 +54,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    background: #EEE;
+    background: var(--clr-very-light-grey);
     border: none;
     border-radius: 10px;
 }

@@ -1,68 +1,161 @@
-*,
-::before,
-::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  /* Global colors definition */
+  --clr-denim: #022959;
+  --clr-purple: #483eff;
+  --clr-light-blue: #abbcff;
+  --clr-sky-blue: #bee2fd;
+  --clr-grey: #9699aa;
+  --clr-light-grey: #d6d9e6;
+  --clr-very-light-grey: #f8f9ff;
+  --clr-white: #ffffff;
+  --clr-red: #ee374a;
+
+  /* utility colors  */
+  --text-clr-primary: var(
+    --clr-denim
+  ); /* text color for titles and dark texts */
+  --text-clr-secondary: var(
+    --clr-grey
+  ); /* text color for subtitles and light texts */
+  --text-clr-purple: var(--clr-purple);
+  --text-clr-warning: var(--clr-red); /* text color for warnings and errors */
+
+  /* Background colors */
+  --bg-dark: var(--clr-denim); /* for toggle bg and button bg */
+  --bg-primary: var(--clr-white);
+  --bg-secondary: var(--clr-purple);
+  --bg-accent: var(--clr-very-light-grey);
+  --stepper-active-bg: var(--clr-sky-blue);
+
+  /* Mobile view font sizes*/
+  --fs-xl: 32px;
+  --fs-lg: 18px;
+  --fs-md: 14px;
+  --fs-sm: 12px;
+
+  /* line heights */
+  --lh-md: 25px;
 }
 
+/* on small screens upwards  */
+@media screen and (min-width: 576px) {
+  :root {
+    --fs-xl: 35px;
+    --fs-lg: 20px;
+    --lh-md: 35px;
+  }
+}
+
+/* Any other breakpoints will go here */
+
+html {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
 
 body {
-  height: 100vh;
-  align-content: center;
   font-family: "Ubuntu", sans-serif;
-  background-color: #eef5ff;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
+
+/* utility classes  */
+.title {
+  font-size: var(--fs-xl);
+  color: var(--text-clr-primary);
+  line-height: normal;
+  font-weight: 700;
+}
+
+.sub-title {
+  font-size: var(--fs-lg);
+  font-weight: 400;
+  line-height: var(--lh-md);
+  color: var(--text-clr-secondary);
+}
+
+.base-text {
+  font-size: var(--fs-md);
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--clr-grey);
+}
+
+.text-dark {
+  color: var(--clr-denim) !important;
+}
+
+.text-purple {
+  color: var(--clr-purple) !important;
+}
+
+.select-active {
+  border-color: var(--clr-purple);
+}
+
+.input-error {
+  border-color: var(--clr-red);
+  outline-color: var(--clr-red);
+}
+
+
+
+
 
 /* DONT EDIT THIS SIDE IT IS THE RESPONSIVE ZONE */
 /* REMEMBER TO GIVE YOUR CONTAINER DIVS A CLASS OF "container" */
 /* then copy the media queries at the end of this page into your css and edit it from  there */
 .container {
-  width: 100%;
-  border-radius: 20px;
-  /* padding-inline: 0.5rem; */
-  margin-inline: auto;
-}
-
-/* xtra small screen */
-@media (min-width: 475px) {
-  .container {
-    max-width: 470px;
+    width: 100%;
+    border-radius: 20px;
+    /* padding-inline: 0.5rem; */
+    margin-inline: auto;
   }
-}
-/* small screens */
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
+  
+  /* xtra small screen */
+  @media (min-width: 475px) {
+    .container {
+      max-width: 470px;
+    }
   }
-}
-/* medium screens */
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
+  /* small screens */
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
   }
-}
-
-/*  large screens */
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-    padding: 1rem;
+  /* medium screens */
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
   }
-}
-
-/* COPY AND USE THE MEDIA QUERIES BELOW FOR YOUR COMPONENT */
-
-/* xtra small screens */
-/* @media (min-width: 475px) {
-}
-/*  small screens */
-/* @media (min-width: 640px) {
-}
-/* medium screens */
-/* @media (min-width: 768px) {
-}
-/* large screens */
-/* @media (min-width: 1024px) {
-}
- */
+  
+  /*  large screens */
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+      padding: 1rem;
+    }
+  }
+  
+  /* COPY AND USE THE MEDIA QUERIES BELOW FOR YOUR COMPONENT */
+  
+  /* xtra small screens */
+  /* @media (min-width: 475px) {
+  }
+  /*  small screens */
+  /* @media (min-width: 640px) {
+  }
+  /* medium screens */
+  /* @media (min-width: 768px) {
+  }
+  /* large screens */
+  /* @media (min-width: 1024px) {
+  }
+   */
+  

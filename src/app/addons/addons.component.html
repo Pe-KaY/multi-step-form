@@ -1,4 +1,8 @@
-<form [formGroup]="addonForm" class="addon__content-wrapper" (ngSubmit)="nextStep()">
+<form
+  [formGroup]="addonForm"
+  class="addon__content-wrapper"
+  (ngSubmit)="nextStep()"
+>
   <div class="addon__modal">
     <div class="header">
       <h1 class="title">Pick add-ons</h1>
@@ -10,7 +14,13 @@
       @for (addon of addonsList; track addon.name) {
       <label class="addon__option">
         <div class="addon__title-and-desc">
-          <input type="checkbox" name="online-service" id="online-service" />
+          <input
+            [formControlName]="addon.name"
+
+            type="checkbox"
+            name="online-service"
+            id="online-service"
+          />
           <div>
             <h4 class="option__title">{{ addon.name }}</h4>
             <p class="text-sm">{{ addon.description }}</p>
@@ -26,8 +36,6 @@
 
   <div class="addon__footer">
     <button class="btn-ghost">Go back</button>
-    <button class="btn"
-    type="submit"
-    >Next Step</button>
+    <button class="btn" type="submit">Next Step</button>
   </div>
 </form>

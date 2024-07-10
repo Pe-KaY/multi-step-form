@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -8,12 +8,22 @@ import { RouterLink } from '@angular/router';
   templateUrl: './summary.component.html',
   styleUrl: './summary.component.css'
 })
-export class SummaryComponent {
+export class SummaryComponent implements OnInit{
 
-  isConfirmed = false;
+  isConfirmed: boolean = false;
+  
+  ngOnInit(): void {
+    this.isConfirmed;
+  }
 
-  routing () {
+  formCompleted () {
+    this.isConfirmed = true;
+  }
+
+  routeBack () {
     
   }
+
+  
 
 }

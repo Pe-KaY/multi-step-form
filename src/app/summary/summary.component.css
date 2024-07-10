@@ -151,6 +151,9 @@ section.total {
 .component_thank-you h1 {
     margin-top: 1rem;
 }
+.component_thank-you p {
+    color: var(--text-clr-secondary);
+}
 
 
 

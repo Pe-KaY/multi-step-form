@@ -1,66 +1,68 @@
 
 <div class="main-container">
-    <!-- <section class="main_summary">
-        <header>
-            <h1 class="component_title">
-            Finishing up
-            </h1>
-            <!-- small text / subtitle --
-            <p class="component_subtitle">Double-check everything looks OK before confirming.</p>
-        </header>
-        
-        <!-- summary report --
-        <section class="component_summary_container">
-            <div class="arcade">
-                <!-- selected plan --
-                <div>
-                    <p>
-                        Arcade (Monthly)
-                    </p>
-                    <a href="#">Change</a>
+    @if (!isConfirmed) {
+        <section class="main_summary">
+            <header>
+                <h1 class="component_title">
+                Finishing up
+                </h1>
+                <!-- small text / subtitle -->
+                <p class="component_subtitle">Double-check everything looks OK before confirming.</p>
+            </header>
+            
+            <!-- summary report -->
+            <section class="component_summary_container">
+                <div class="arcade">
+                    <!-- selected plan -->
+                    <div>
+                        <p>
+                            Arcade (Monthly)
+                        </p>
+                        <a href="#">Change</a>
+                    </div>
+            
+                    <!-- charges -->
+                    <p>$9/mo</p>
+            
                 </div>
-        
-                <!-- charges --
-                <p>$9/mo</p>
-        
-            </div>
-            <!-- selected addons --
-            <div class="online_service">
-                <!-- online service --
-                <p>Online service</p>
-                <p>+$1/mo</p>
-            </div>
+                <!-- selected addons -->
+                <div class="online_service">
+                    <!-- online service -->
+                    <p>Online service</p>
+                    <p>+$1/mo</p>
+                </div>
+    
+                <div class="larger_storage">
+                    <!-- large storage -->
+                    <p>Larger storage</p>
+                    <p>+$2/mo</p>
+                </div>
+            
+            </section>
+            
+            <!-- total charges -->
+            <section class="total">
+                <p>Total (per month)</p>
+                <p>+$12/mo</p>    
+            </section>
+            
+        </section> 
+    
+        <!-- navigation button -->
+        <section class="component_buttons">
+            <button class="go-back">Go Back</button>
+            <button class="confirm">Confirm</button>
+        </section> 
+    }
 
-            <div class="larger_storage">
-                <!-- large storage --
-                <p>Larger storage</p>
-                <p>+$2/mo</p>
-            </div>
-        
+    @if (isConfirmed) {
+        <section class="component_thank-you">
+            <img src="../../assets/icon-thank-you.svg" alt="thank you svg icon showing completion of form">
+            <h1>Thank you!</h1>
+            <p>
+                Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support&#64;loremgaming.com.
+            </p>
         </section>
-        
-        <!-- total charges --
-        <section class="total">
-            <p>Total (per month)</p>
-            <p>+$12/mo</p>    
-        </section>
-        
-    </section> -->
-
-    <!-- navigation button -->
-    <!-- <section class="component_buttons">
-        <button class="go-back">Go Back</button>
-        <button class="confirm">Confirm</button>
-    </section>  -->
-
-    <section class="component_thank-you">
-        <img src="../../assets/icon-thank-you.svg" alt="thank you svg icon showing completion of form">
-        <h1>Thank you!</h1>
-        <p>
-            Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support&#64;loremgaming.com.
-        </p>
-    </section>
+    }
 </div>
 
-
-<!-- thank you component -->

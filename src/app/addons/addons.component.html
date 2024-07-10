@@ -1,56 +1,57 @@
-<div class="addonsContainer">
-  <div class="addonsContainer__details">
-    <div class="addonsContainer__text">
-      <h3>Select you addons</h3>
-      <p>You have the option of monthly or yearly billing.</p>
-    </div>
-    <div class="addonsDiv">
-      <button class="addons">
-        <div class="addons-type__img">
-          <img src="../../assets/icon-arcade.svg" alt="arcade icon" />
-        </div>
-        <div class="addons-type__text">
-          <p class="name">Arcade</p>
-          <p class="amount">$90/yr</p>
-          <p class="duration">2 months free</p>
-        </div>
-      </button>
-      <button class="addons">
-        <div class="addons-type__img">
-          <img src="../../assets/icon-advanced.svg" alt="advanced icon" />
-        </div>
-        <div class="addons-type__text">
-          <p class="name">Advanced</p>
-          <p class="amount">$120/yr</p>
-          <p class="duration">2 months free</p>
-        </div>
-      </button>
-      <button class="addons">
-        <div class="addons-type__img">
-          <img src="../../assets/icon-pro.svg" alt="pro icon" />
-        </div>
-        <div class="addons-type__text">
-          <p class="name">Pro</p>
-          <p class="amount">$150/yr</p>
-          <p class="duration">2 months free</p>
-        </div>
-      </button>
+<div class="addon__content-wrapper">
+  <div class="addon__modal">
+    <div class="header">
+      <h1 class="title">Pick add-ons</h1>
+      <p class="sub-title">Add-ons help enhance your gaming experience.</p>
     </div>
 
-    <div class="options-container">
-      <div class="options">
-        <span>Monthly</span>
-        <div class="toggle">
-          <span class="toggle-btn"></span>
+    <form class="addon__options">
+      <!-- option -->
+      <label class="addon__option">
+        <div class="addon__title-and-desc">
+          <input type="checkbox" name="online-service" id="online-service" />
+          <div>
+            <h4 class="option__title">Online service</h4>
+            <p class="text-sm">Access to multiplayer games</p>
+          </div>
         </div>
-        <span>Yearly</span>
-      </div>
-    </div>
+
+        <p class="text-purple">+$10/yr</p>
+      </label>
+      <!--  -->
+      <!-- option -->
+      <label class="addon__option">
+        <div class="addon__title-and-desc">
+          <input type="checkbox" name="online-service" id="online-service" />
+          <div>
+            <h4 class="option__title">Larger storage</h4>
+            <p class="text-sm">Extra 1TB of cloud save</p>
+          </div>
+        </div>
+
+        <p class="text-purple">+$10/yr</p>
+      </label>
+      <!--  -->
+      <!-- option -->
+      <label class="addon__option">
+        <div class="addon__title-and-desc">
+          <input type="checkbox" name="online-service" id="online-service" />
+          <div>
+            <h4 class="option__title">Customizable profile</h4>
+            <p class="text-sm">Custom theme on your profile</p>
+          </div>
+        </div>
+
+        <p class="text-purple">+$10/yr</p>
+      </label>
+      <!--  -->
+    </form>
   </div>
-  <div class="addonsButtons">
-    <div class="addonsContainer__button-div">
-      <button class="btn goBack">Go back</button>
-      <button class="btn nextStep">Next Step</button>
-    </div>
+
+  <div class="addon__footer">
+    <button class="btn-ghost">Go back</button>
+    <button class="btn">
+        Next Step
+    </button>
   </div>
 </div>

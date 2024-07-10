@@ -1,11 +1,11 @@
-<div class="addon__content-wrapper">
+<form [formGroup]="addonForm" class="addon__content-wrapper" (ngSubmit)="nextStep()">
   <div class="addon__modal">
     <div class="header">
       <h1 class="title">Pick add-ons</h1>
       <p class="sub-title">Add-ons help enhance your gaming experience.</p>
     </div>
 
-    <form class="addon__options">
+    <div class="addon__options">
       <!-- option -->
       @for (addon of addonsList; track addon.name) {
       <label class="addon__option">
@@ -21,11 +21,13 @@
       </label>
       }
       <!--  -->
-    </form>
+    </div>
   </div>
 
   <div class="addon__footer">
     <button class="btn-ghost">Go back</button>
-    <button class="btn">Next Step</button>
+    <button class="btn"
+    type="submit"
+    >Next Step</button>
   </div>
-</div>
+</form>

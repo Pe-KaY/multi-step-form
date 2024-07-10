@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { FormDataService } from '../service/form-data.service';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-addons',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './addons.component.html',
   styleUrl: './addons.component.css',
 })
@@ -28,4 +31,26 @@ export class AddonsComponent {
       checked: false,
     },
   ];
+
+  addonForm!: FormGroup;
+
+  constructor(
+    private formDataService: FormDataService,
+    private router: Router,
+    private fb: FormBuilder
+  ) {}
+
+  ngOnInit() {
+    this.addonForm = this.fb.group({
+      selectedAddons: ['', Validators.required],
+    });
+  }
+
+  nextStep() {
+    console.log("Moving to next steps")
+    if (this.addonForm.valid) {
+      this.formDataService.updateFormData(this.addonForm.value);
+      this.router.navigate(['/addons']);
+    }
+  }
 }

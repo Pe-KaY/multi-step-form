@@ -7,6 +7,7 @@
 
     <form class="addon__options">
       <!-- option -->
+      @for (addon of addonsList; track addon.name) {
       <label class="addon__option">
         <div class="addon__title-and-desc">
           <input type="checkbox" name="online-service" id="online-service" />
@@ -18,40 +19,13 @@
 
         <p class="text-purple">+$10/yr</p>
       </label>
-      <!--  -->
-      <!-- option -->
-      <label class="addon__option">
-        <div class="addon__title-and-desc">
-          <input type="checkbox" name="online-service" id="online-service" />
-          <div>
-            <h4 class="option__title">Larger storage</h4>
-            <p class="text-sm">Extra 1TB of cloud save</p>
-          </div>
-        </div>
-
-        <p class="text-purple">+$10/yr</p>
-      </label>
-      <!--  -->
-      <!-- option -->
-      <label class="addon__option">
-        <div class="addon__title-and-desc">
-          <input type="checkbox" name="online-service" id="online-service" />
-          <div>
-            <h4 class="option__title">Customizable profile</h4>
-            <p class="text-sm">Custom theme on your profile</p>
-          </div>
-        </div>
-
-        <p class="text-purple">+$10/yr</p>
-      </label>
+      }
       <!--  -->
     </form>
   </div>
 
   <div class="addon__footer">
     <button class="btn-ghost">Go back</button>
-    <button class="btn">
-        Next Step
-    </button>
+    <button class="btn">Next Step</button>
   </div>
 </div>

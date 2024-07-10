@@ -99,7 +99,7 @@ section.total {
 }
 .confirm:active {
     background: #928CFF;
-    transition: all 300ms ease;
+    /* transition: all 300ms ease; */
 }
 .go-back {
     border: none;
@@ -119,6 +119,10 @@ section.total {
 }
 .arcade a {
     color: var(--text-clr-secondary);
+    cursor: pointer;
+}
+.arcade a:active {
+    color: purple;
 }
 .component_summary_container > div > :last-child {
     color: #022959;
@@ -142,9 +146,7 @@ section.total {
     gap: 5px;
 
 }
-.arcade a:active {
-    color: purple;
-}
+
 .component_thank-you {
     margin-top: -5rem;
     background: #fff;

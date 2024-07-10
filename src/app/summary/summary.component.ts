@@ -18,6 +18,10 @@ export class SummaryComponent implements OnInit{
     this.isConfirmed;
   }
 
+  routeToPlan () {
+    this.router.navigateByUrl('/plan');
+  }
+
   formCompleted () {
     this.isConfirmed = true;
   }

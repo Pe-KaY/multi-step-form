@@ -12,12 +12,12 @@
         <div class="addon__title-and-desc">
           <input type="checkbox" name="online-service" id="online-service" />
           <div>
-            <h4 class="option__title">Online service</h4>
-            <p class="text-sm">Access to multiplayer games</p>
+            <h4 class="option__title">{{ addon.name }}</h4>
+            <p class="text-sm">{{ addon.description }}</p>
           </div>
         </div>
 
-        <p class="text-purple">+$10/yr</p>
+        <p class="text-purple">+${{ addon.price.monthly }}/yr</p>
       </label>
       }
       <!--  -->

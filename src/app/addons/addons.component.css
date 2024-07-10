@@ -23,9 +23,8 @@
   justify-content: space-between;
   align-items: center;
   padding-inline: 2rem;
-  padding-block: .5rem;
-  background: var(--bg-primary)
-
+  padding-block: 0.5rem;
+  background: var(--bg-primary);
 }
 
 .addon__options {
@@ -65,7 +64,7 @@ input[type="checkbox"]:checked:before {
 }
 .option__title {
   font-weight: 500;
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
   color: var(--text-clr-primary);
 }
 
@@ -73,7 +72,6 @@ input[type="checkbox"]:checked:before {
 @media (min-width: 1024px) {
   .addon__content-wrapper {
     background: var(--bg-primary);
-
   }
   .addon__content-wrapper {
     width: 80%;
@@ -83,9 +81,7 @@ input[type="checkbox"]:checked:before {
     margin-top: 0;
     padding: 0;
   }
-
 }
-
 
 .addons .addons-type__text .duration {
   font-size: var(--fs-lg);

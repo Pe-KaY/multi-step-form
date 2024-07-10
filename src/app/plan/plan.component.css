@@ -172,9 +172,23 @@ button.goBack {
     background: none;
     box-shadow: none;
     margin-top: 0;
+    height: 100%;
   }
+
+  .planContainer .planContainer__button-div {
+    width: 100%;
+  }
+
   .planContainer__details .planDiv {
     /* display: flex; */
     flex-direction: row;
+
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
 }

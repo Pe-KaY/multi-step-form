@@ -44,6 +44,8 @@
   --lh-md: 25px;
 }
 
+
+
 /* on small screens upwards  */
 @media screen and (min-width: 576px) {
   :root {
@@ -110,6 +112,34 @@ body {
   outline-color: var(--clr-red);
 }
 
+.btn {
+  background-color: var(--clr-denim);
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: var(--fs-md);
+  padding: 0.8rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.btn-ghost {
+  background: none;
+  border: none;
+  padding-inline: none;
+  padding-block: 1rem;
+  cursor: pointer;
+  color: var(--clr-grey);
+}
+
+.btn-purple {
+  background-color: var(--bg-purple);
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  padding: 0.8rem;
+  font-size: var(--fs-lg);
+}
 
 
 

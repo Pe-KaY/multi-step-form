@@ -30,7 +30,10 @@
   height: fit-content;
 }
 
-/*  */
+/* right side style */
+.form__rightSide {
+  height: 70%;
+}
 
 /* number circles */
 .form__leftside-circlenums {

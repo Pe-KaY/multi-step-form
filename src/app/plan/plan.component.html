@@ -4,53 +4,92 @@
       <h3>Select you plan</h3>
       <p>You have the option of monthly or yearly billing.</p>
     </div>
-    <div class="planDiv">
-      <button class="plan">
-        <div class="plan-type__img">
-          <img src="../../assets/icon-arcade.svg" alt="arcade icon" />
-        </div>
-        <div class="plan-type__text">
-          <p class="name">Arcade</p>
-          <p class="amount">$90/yr</p>
-          <p class="duration">2 months free</p>
-        </div>
-      </button>
-      <button class="plan">
-        <div class="plan-type__img">
-          <img src="../../assets/icon-advanced.svg" alt="advanced icon" />
-        </div>
-        <div class="plan-type__text">
-          <p class="name">Advanced</p>
-          <p class="amount">$120/yr</p>
-          <p class="duration">2 months free</p>
-        </div>
-      </button>
-      <button class="plan">
-        <div class="plan-type__img">
-          <img src="../../assets/icon-pro.svg" alt="pro icon" />
-        </div>
-        <div class="plan-type__text">
-          <p class="name">Pro</p>
-          <p class="amount">$150/yr</p>
-          <p class="duration">2 months free</p>
-        </div>
-      </button>
-    </div>
 
-    <div class="options-container">
-      <div class="options">
-        <span>Monthly</span>
-        <div class="toggle">
-          <span class="toggle-btn"></span>
-        </div>
-        <span>Yearly</span>
+    <!-- form updates -->
+    <form [formGroup]="PlanSelectionForm" (ngSubmit)="nextStep()">
+      <div class="planDiv">
+        @for (plan of plans; track $index) {
+
+        <button class="plan">
+          <div class="plan-type__img">
+            <img src="../../assets/icon-arcade.svg" alt="arcade icon" />
+          </div>
+          <div class="plan-type__text">
+            <p class="name">{{ plan.name }}</p>
+            <p class="amount">{{ plan.price }}/{{ billingPeriod }}</p>
+            @if (billingPeriod === 'yearly') {
+            <p class="duration">12 months free</p>
+            }
+          </div>
+        </button>
+        }
+        <!--<button class="plan">
+         <div class="plan-type__img">
+            <img src="../../assets/icon-arcade.svg" alt="arcade icon" />
+          </div>
+          <div class="plan-type__text">
+            <p class="name">Arcade</p>
+            <p class="amount">$90/yr</p>
+            <p class="duration">2 months free</p>
+          </div>
+        </button>
+        <button class="plan">
+          <div class="plan-type__img">
+            <img src="../../assets/icon-advanced.svg" alt="advanced icon" />
+          </div>
+          <div class="plan-type__text">
+            <p class="name">Advanced</p>
+            <p class="amount">$120/yr</p>
+            <p class="duration">2 months free</p>
+          </div>
+        </button>
+        <button class="plan">
+          <div class="plan-type__img">
+            <img src="../../assets/icon-pro.svg" alt="pro icon" />
+          </div>
+          <div class="plan-type__text">
+            <p class="name">Pro</p>
+            <p class="amount">$150/yr</p>
+            <p class="duration">2 months free</p>
+          </button>
+          </div>-->
       </div>
-    </div>
-  </div>
-  <div class="planButtons">
-    <div class="planContainer__button-div">
-      <button class="btn goBack">Go back</button>
-      <button class="btn nextStep">Next Step</button>
-    </div>
+
+      <div class="options-container">
+        <div class="options">
+          <span>Monthly</span>
+          <div class="toggle">
+            <!-- <input
+              type="radio"
+              formControlName="billingPeriod"
+              value="monthly"
+              (change)="onBillingPeriodChange()"
+            /> -->
+            <input
+              type="radio"
+              formControlName="billingPeriod"
+              value="yearly"
+              (change)="onBillingPeriodChange()"
+            />
+            <!-- <span class="toggle-btn"></span> -->
+          </div>
+          <span>Yearly</span>
+        </div>
+      </div>
+      <div class="planButtons">
+        <div class="planContainer__button-div">
+          <button class="btn goBack" type="button" (click)="goBack()">
+            Go back
+          </button>
+          <button
+            class="btn nextStep"
+            type="submit"
+            [disabled]="PlanSelectionForm.invalid"
+          >
+            Next Step
+          </button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

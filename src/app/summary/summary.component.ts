@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-summary',
@@ -11,6 +11,8 @@ import { RouterLink } from '@angular/router';
 export class SummaryComponent implements OnInit{
 
   isConfirmed: boolean = false;
+
+  constructor(private router: Router) {};
   
   ngOnInit(): void {
     this.isConfirmed;
@@ -21,7 +23,7 @@ export class SummaryComponent implements OnInit{
   }
 
   routeBack () {
-    
+    this.router.navigateByUrl('/addons');
   }
 
   

@@ -7,6 +7,8 @@ import { FormData } from '../interfaces/form-data';
 export class FormDataService {
   private formData: FormData = {};
 
+  counter: number = 0;
+
   updateFormData(data: Partial<FormData>) {
     this.formData = { ...this.formData, ...data };
   }

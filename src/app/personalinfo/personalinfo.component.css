@@ -33,10 +33,6 @@
     padding-right: 1em;
     color: var(--clr-light-grey);
 }
-/* .personalInfo__form-container {
-    display: flex;
-    flex-direction: column;
-} */
 
 .personalInfo__form-inputs {
     display: flex;
@@ -57,13 +53,14 @@
 }
 
 .btn-background {
+    background-color: var(--clr-white);
     width: 100%;
-    height: 40px;
+    height: 50px;
     bottom: 0;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-
+    margin-top: 200px;
 }
 .next-btn {
     padding: 0.625em 1.25em;
@@ -234,11 +231,14 @@
         font-size: 1rem;
     }
    
+    .btn-background {
+        margin-top: 120px;
+    }
 
     .next-btn {
         padding: 10px;
         font-size: 1em;
-        margin-right: 115px;
+        margin-right: 25px;
     }
   }
 

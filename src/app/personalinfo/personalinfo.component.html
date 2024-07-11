@@ -12,6 +12,9 @@
                         <label for="name">Name</label>
                         <input type="text" id="name" placeholder="e.g. Stephen King" formControlName="name"
                             [class.error-outline]="personalInfoForm.controls['name'].invalid && personalInfoForm.controls['name'].touched">
+                            <!-- @if (personalInfoForm.controls['name'].invalid && personalInfoForm.controls['name'].touched) {
+                                <div class="input-error">This field is required</div>
+                            } -->
                         <div *ngIf="personalInfoForm.controls['name'].invalid && personalInfoForm.controls['name'].touched"
                             class="input-error">This field is required</div>
                     </div>

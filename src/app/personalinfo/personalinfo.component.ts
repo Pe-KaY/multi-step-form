@@ -57,12 +57,14 @@ export class PersonalinfoComponent implements OnInit{
     if (this.personalInfoForm.valid){
         this.formDataService.updateFormData(this.personalInfoForm.value);
         this.router.navigate(['/plan']);
+        this.formDataService.activeStep('plan')
     }
     else{
       this.nameError = true
       this.emailError = true
       this.phoneError = true
       
+      this.personalInfoForm.markAllAsTouched();
     }
 
   }

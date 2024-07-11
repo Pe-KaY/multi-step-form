@@ -79,10 +79,8 @@
 }
 
 /* active and hover effects */
-.personalInfo__form-inputs > input:active {
-    border: 1px solid green;
-    border-color: aqua;
-    /* border-color: var(--clr-purple); */
+.personalInfo__form-inputs > input:focus {
+    outline: 3px solid var(--clr-purple);
 }
 
 

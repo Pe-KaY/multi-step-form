@@ -1,57 +1,41 @@
-<div class="addon__content-wrapper">
+<form
+  [formGroup]="addonForm"
+  class="addon__content-wrapper"
+  (ngSubmit)="nextStep()"
+>
   <div class="addon__modal">
     <div class="header">
       <h1 class="title">Pick add-ons</h1>
       <p class="sub-title">Add-ons help enhance your gaming experience.</p>
     </div>
 
-    <form class="addon__options">
+    <div class="addon__options">
       <!-- option -->
+      @for (addon of addonsList; track addon.name) {
       <label class="addon__option">
         <div class="addon__title-and-desc">
-          <input type="checkbox" name="online-service" id="online-service" />
+          <input
+            [formControlName]="addon.name"
+
+            type="checkbox"
+            name="online-service"
+            id="online-service"
+          />
           <div>
-            <h4 class="option__title">Online service</h4>
-            <p class="text-sm">Access to multiplayer games</p>
+            <h4 class="option__title">{{ addon.name }}</h4>
+            <p class="text-sm">{{ addon.description }}</p>
           </div>
         </div>
 
-        <p class="text-purple">+$10/yr</p>
+        <p class="text-purple">+${{ addon.price.monthly }}/yr</p>
       </label>
+      }
       <!--  -->
-      <!-- option -->
-      <label class="addon__option">
-        <div class="addon__title-and-desc">
-          <input type="checkbox" name="online-service" id="online-service" />
-          <div>
-            <h4 class="option__title">Larger storage</h4>
-            <p class="text-sm">Extra 1TB of cloud save</p>
-          </div>
-        </div>
-
-        <p class="text-purple">+$10/yr</p>
-      </label>
-      <!--  -->
-      <!-- option -->
-      <label class="addon__option">
-        <div class="addon__title-and-desc">
-          <input type="checkbox" name="online-service" id="online-service" />
-          <div>
-            <h4 class="option__title">Customizable profile</h4>
-            <p class="text-sm">Custom theme on your profile</p>
-          </div>
-        </div>
-
-        <p class="text-purple">+$10/yr</p>
-      </label>
-      <!--  -->
-    </form>
+    </div>
   </div>
 
   <div class="addon__footer">
     <button class="btn-ghost">Go back</button>
-    <button class="btn">
-        Next Step
-    </button>
+    <button class="btn" type="submit">Next Step</button>
   </div>
-</div>
+</form>

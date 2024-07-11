@@ -71,10 +71,11 @@ export class PlanComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['']);
-    this.formDataService.activeStep('personal')
+    this.formDataService.activeStep('personal');
   }
 
   nextStep() {
+    this.formDataService.activeStep('add-ons');
     if (this.PlanSelectionForm.valid) {
       const selectedPlanName =
         this.PlanSelectionForm.get('selectedPlan')?.value;
@@ -97,6 +98,7 @@ export class PlanComponent implements OnInit {
         this.formDataService.updateFormData(this.PlanSelectionForm.value);
         console.log(this.PlanSelectionForm.value);
         this.router.navigate(['/addons']);
+        this.formDataService.activeStep('add-ons');
       }
     }
   }

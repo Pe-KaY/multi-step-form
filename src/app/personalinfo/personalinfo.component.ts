@@ -4,12 +4,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormDataService } from '../service/form-data.service';
 import { FormData } from '../interfaces/form-data';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-personalinfo',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './personalinfo.component.html',
   styleUrl: './personalinfo.component.css'
 })
@@ -39,6 +40,17 @@ export class PersonalinfoComponent implements OnInit{
     }
   }
   
+  // error handling
+  nameError: boolean = false
+  emailError: boolean = false
+  phoneError: boolean = false
+  
+  errorCheck(inputs: string){
+    if(inputs === 'name') this.nameError = true
+    if(inputs === 'email') this.emailError = true
+    if(inputs === 'phone') this.phoneError = true
+  }
+
 
 
   nextStep(): void{
@@ -47,8 +59,13 @@ export class PersonalinfoComponent implements OnInit{
         this.router.navigate(['/plan']);
     }
     else{
-      console.log('Form rejected')
+      this.nameError = true
+      this.emailError = true
+      this.phoneError = true
+      
     }
+
   }
+
 }
  

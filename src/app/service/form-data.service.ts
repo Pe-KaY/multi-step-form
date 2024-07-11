@@ -34,17 +34,17 @@ export class FormDataService {
   // EXAMPLE: activeStep('summary'). DO same for your back
   activeStep(str: string): void {
     // first reset all steps
-    this.stepsResseter();
+    this.stepsReset();
 
     //  then activates current step
     if (str === 'personal') this.stepOne = true;
     if (str === 'plan') this.stepTwo = true;
     if (str === 'add-ons') this.stepThree = true;
-    if (str === 'summaryl') this.stepFour = true;
+    if (str === 'summary') this.stepFour = true;
   }
 
   // reset step function
-  stepsResseter(): void {
+  stepsReset(): void {
     this.stepOne = false;
     this.stepTwo = false;
     this.stepThree = false;

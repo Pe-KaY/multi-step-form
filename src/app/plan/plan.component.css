@@ -139,6 +139,7 @@
   background-color: var(--clr-denim);
   border-radius: 25px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .options .toggle input[type="radio"] {

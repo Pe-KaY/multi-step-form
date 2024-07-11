@@ -15,6 +15,8 @@ export class SummaryComponent implements OnInit{
 
   isConfirmed: boolean = false;
   finalDataReview: FormData = {};
+  selectedPlanPrice:number = 9;
+  totalPrice:number = 0;
 
   constructor(
     private router: Router,
@@ -23,16 +25,25 @@ export class SummaryComponent implements OnInit{
   
   ngOnInit(): void {
     this.isConfirmed;
-    const something = {
-      name: 'kofi',
-      email: 'ko@gmail.com',
-      phone: '02332323223',
-      selectectedPlan: 'arcade',
-      billingPeriod: 'monthly',
-    }
-    // this.formService.updateFormData(something);
+    
     this.finalDataReview = this.formService.getFormData();
-    console.log('received data: ', this.finalDataReview.addons); 
+    // console.log('received data: ', this.finalDataReview.addons); 
+
+    // get the prices and calculate the total sum
+    if (!this.finalDataReview.addons) return;
+    const sum = this.finalDataReview.addons?.reduce((cum, addon) => {
+      if (this.finalDataReview.billingPeriod === 'yearly') {
+        return addon.price.yearly + cum;
+      };
+      return addon.price.monthly + cum;
+    }, this.selectedPlanPrice)
+
+    this.totalPrice = sum;
+    
+  }
+
+  calculateTotal (price : number) {
+
   }
 
   routeToPlan () {

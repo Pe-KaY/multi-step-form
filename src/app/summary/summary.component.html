@@ -17,7 +17,7 @@
                     <div>
                         <p>
                             {{
-                                this.finalDataReview.selectedPlan
+                                finalDataReview.selectedPlan
                             }} ({{
                                     finalDataReview.billingPeriod
                                 }}) <!-- interpolate this -->
@@ -26,7 +26,11 @@
                     </div>
             
                     <!-- charges -->
-                    <p>$9/mo</p> <!-- interpolate this -->
+                     @if (finalDataReview.billingPeriod === 'monthly') {
+                         <p>${{selectedPlanPrice}}/mo</p> <!-- interpolate this -->
+                    } @else {
+                        <p>${{selectedPlanPrice}}/yr</p> <!-- interpolate this -->
+                     }
             
                 </div>
                 <!-- selected addons -->
@@ -34,28 +38,25 @@
                     <div class="online_service">
                         <!-- online service -->
                         <p> {{ selectedAddons.name}} </p> <!-- interpolate this -->
-                        <p> +${{selectedAddons.price.monthly}}/mo </p> <!-- interpolate this -->
+                        @if (finalDataReview.billingPeriod === 'monthly') {
+                            <p> +${{selectedAddons.price.monthly}}/mo </p> <!-- interpolate this -->
+                        } @else {
+                            <p> +${{selectedAddons.price.yearly}}/yr </p> <!-- interpolate this -->
+                        }
                     </div>
                 }
-                 
-                <!-- <div class="online_service">
-                    <!-- online service --
-                    <p>Online service</p> <!-- interpolate this --
-                    <p>+$1/mo</p> <!-- interpolate this --
-                </div>
-    
-                <div class="larger_storage">
-                    <!-- large storage --
-                    <p>Larger storage</p> <!-- interpolate this --
-                    <p>+$2/mo</p> <!-- interpolate this --
-                </div> -->
+                
             
             </section>
             
             <!-- total charges -->
             <section class="total">
-                <p>Total (per month)</p> <!-- interpolate this -->
-                <p>+$12/mo</p>    <!-- interpolate this -->
+                <p>Total (per {{finalDataReview.billingPeriod}})</p> <!-- interpolate this -->
+                @if (finalDataReview.billingPeriod === 'monthly') {
+                    <p>+${{totalPrice}}/mo</p>    <!-- interpolate this -->
+                } @else {
+                    <p>+${{totalPrice}}/yr</p>    <!-- interpolate this -->
+                }
             </section>
             
         </section> 

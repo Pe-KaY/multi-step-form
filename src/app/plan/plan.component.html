@@ -6,17 +6,31 @@
     </div>
 
     <!-- form updates -->
-    <form [formGroup]="PlanSelectionForm" (ngSubmit)="nextStep()">
+    <form class="form" [formGroup]="PlanSelectionForm" (ngSubmit)="nextStep()">
       <div class="planDiv">
         @for (plan of plans; track $index) {
 
-        <button class="plan">
+        <button
+          class="plan"
+          type="button"
+          [class.selected]="
+            PlanSelectionForm.get('selectedPlan')?.value === plan.name
+          "
+          (click)="selectPlan(plan.name)"
+        >
           <div class="plan-type__img">
-            <img src="../../assets/icon-arcade.svg" alt="arcade icon" />
+            <img [src]="plan.icon" [alt]="plan.name + ' icon'" />
           </div>
           <div class="plan-type__text">
             <p class="name">{{ plan.name }}</p>
-            <p class="amount">{{ plan.price }}/{{ billingPeriod }}</p>
+            <p class="amount">
+              ${{
+                billingPeriod === "monthly"
+                  ? plan.priceMonthly
+                  : plan.priceYearly
+              }}
+              /{{ billingPeriod === "monthly" ? "mo" : "yr"}}
+            </p>
             @if (billingPeriod === 'yearly') {
             <p class="duration">12 months free</p>
             }
@@ -58,20 +72,23 @@
       <div class="options-container">
         <div class="options">
           <span>Monthly</span>
-          <div class="toggle">
-            <!-- <input
+          <div class="toggle" (click)="toggleBillingPeriod()">
+            <input
               type="radio"
               formControlName="billingPeriod"
               value="monthly"
-              (change)="onBillingPeriodChange()"
-            /> -->
+              [checked]="billingPeriod === 'monthly'"
+            />
             <input
               type="radio"
               formControlName="billingPeriod"
               value="yearly"
-              (change)="onBillingPeriodChange()"
+              [checked]="billingPeriod === 'yearly'"
             />
-            <!-- <span class="toggle-btn"></span> -->
+            <span
+              class="toggle-btn"
+              [class.yearly]="billingPeriod === 'yearly'"
+            ></span>
           </div>
           <span>Yearly</span>
         </div>
@@ -84,7 +101,7 @@
           <button
             class="btn nextStep"
             type="submit"
-            [disabled]="PlanSelectionForm.invalid"
+            [disabled]="!PlanSelectionForm.valid"
           >
             Next Step
           </button>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { FormDataService } from '../service/form-data.service';
 
 @Component({
   selector: 'app-summary',
@@ -12,7 +13,7 @@ export class SummaryComponent implements OnInit{
 
   isConfirmed: boolean = false;
 
-  constructor(private router: Router) {};
+  constructor(private router: Router , private func: FormDataService) {};
   
   ngOnInit(): void {
     this.isConfirmed;

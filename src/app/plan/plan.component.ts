@@ -71,6 +71,7 @@ export class PlanComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['']);
+    this.formDataService.activeStep('personal')
   }
 
   nextStep() {

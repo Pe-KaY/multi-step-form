@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 // import { FormDataService } from '../service/form-data.service';
 import { FormDataService } from '../service/form-data.service';
+import { FormData } from '../interfaces/form-data';
 
 @Component({
   selector: 'app-summary',
@@ -13,7 +14,7 @@ import { FormDataService } from '../service/form-data.service';
 export class SummaryComponent implements OnInit{
 
   isConfirmed: boolean = false;
-  finalDataCompilation = {};
+  finalDataReview: FormData = {};
 
   constructor(
     private router: Router,
@@ -29,9 +30,9 @@ export class SummaryComponent implements OnInit{
       selectectedPlan: 'arcade',
       billingPeriod: 'monthly',
     }
-    this.formService.updateFormData(something);
-    const finalDataCompilation = this.formService.getFormData();
-    console.log(finalDataCompilation); 
+    // this.formService.updateFormData(something);
+    this.finalDataReview = this.formService.getFormData();
+    console.log(this.finalDataReview); 
   }
 
   routeToPlan () {
@@ -45,6 +46,22 @@ export class SummaryComponent implements OnInit{
   routeBack () {
     this.router.navigateByUrl('/addons');
   }
+
+  // firstLetterCap (word : string) {
+  //   if (word.length === 0) {
+  //     return word; // handle empty string case
+  //   }
+  
+  //   return word.replace(word.at(0), word.at(0)?.toUpperCase());
+  // }
+
+  // firstLetterCap(word: string) {
+  //   if (word.length === 0) {
+  //     return word; // handle empty string case
+  //   }
+  //   const firstChar = word.charAt(0);
+  //   return word.replace(firstChar, firstChar.toUpperCase());
+  // }
 
   
 

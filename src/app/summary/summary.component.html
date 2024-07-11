@@ -16,34 +16,38 @@
                     <!-- selected plan -->
                     <div>
                         <p>
-                            Arcade (Monthly)
+                            {{
+                                this.finalDataReview.selectedPlan
+                            }} ({{
+                                    finalDataReview.billingPeriod
+                                }}) <!-- interpolate this -->
                         </p>
                         <a (click)="routeToPlan()">Change</a>
                     </div>
             
                     <!-- charges -->
-                    <p>$9/mo</p>
+                    <p>$9/mo</p> <!-- interpolate this -->
             
                 </div>
                 <!-- selected addons -->
                 <div class="online_service">
                     <!-- online service -->
-                    <p>Online service</p>
-                    <p>+$1/mo</p>
+                    <p>Online service</p> <!-- interpolate this -->
+                    <p>+$1/mo</p> <!-- interpolate this -->
                 </div>
     
                 <div class="larger_storage">
                     <!-- large storage -->
-                    <p>Larger storage</p>
-                    <p>+$2/mo</p>
+                    <p>Larger storage</p> <!-- interpolate this -->
+                    <p>+$2/mo</p> <!-- interpolate this -->
                 </div>
             
             </section>
             
             <!-- total charges -->
             <section class="total">
-                <p>Total (per month)</p>
-                <p>+$12/mo</p>    
+                <p>Total (per month)</p> <!-- interpolate this -->
+                <p>+$12/mo</p>    <!-- interpolate this -->
             </section>
             
         </section> 

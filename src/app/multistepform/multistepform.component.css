@@ -117,3 +117,9 @@
     display: block;
   }
 }
+
+/* active step */
+.isActive {
+  background-color: #bfe1fa;
+  color: black;
+}

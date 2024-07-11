@@ -11,6 +11,16 @@ import {
   AbstractControl,
 } from '@angular/forms';
 
+interface Addon {
+  name: string;
+  description: string;
+  price: {
+    monthly: number;
+    yearly: number;
+  };
+  checked: boolean;
+}
+
 @Component({
   selector: 'app-addons',
   standalone: true,
@@ -43,7 +53,7 @@ export class AddonsComponent {
   addonForm!: FormGroup;
   isMonthly!: true | false;
   canGoNext = false;
-  // selectedAddons: any;
+  selectedAddons: Addon[] = [];
 
   constructor(
     private formDataService: FormDataService,
@@ -64,7 +74,7 @@ export class AddonsComponent {
   }
 
   atLeastOneValidator(): boolean {
-    console.log("form validator form: ",this.addonForm.controls )
+    console.log('form validator form: ', this.addonForm.controls);
     return Object.entries(this.addonForm.controls).some(([key, control]) => {
       if (control.status === 'VALID' && control.value === true) {
         return true;
@@ -75,9 +85,23 @@ export class AddonsComponent {
 
   checkValidity() {
     this.canGoNext = this.atLeastOneValidator();
-    console.log(this.atLeastOneValidator());
-    console.log('this.canGoNext: ', this.canGoNext);
+    // console.log(this.atLeastOneValidator());
+    // console.log('this.canGoNext: ', this.canGoNext);
   }
+
+  getSelectedAddonsData() {
+    let selectedAddons = [];
+    for (let key in this.addonForm.value) {
+      if (this.addonForm.value[key]) {
+        const addon = this.addonsList.find((addon) => addon.name === key);
+        if (addon) {
+          selectedAddons.push(addon);
+        }
+      }
+    }
+    return selectedAddons;
+  }
+
   nextStep() {
     console.log(
       'Moving to next steps ',
@@ -85,16 +109,19 @@ export class AddonsComponent {
       'form valid : ',
       this.addonForm.valid
     );
+    console.log('selected addons: ', this.getSelectedAddonsData());
     this.router.navigateByUrl('/summary');
-    this.formDataService.updateFormData(this.addonForm.value);
+    this.formDataService.updateFormData({
+      addons: this.getSelectedAddonsData(),
+    });
     this.formDataService.activeStep('summary');
-    
+
     // if (this.addonForm.valid) {
-      // }
-    }
-    
-    goBack() {
-      this.router.navigateByUrl('/plan');
-      this.formDataService.activeStep('plan');
+    // }
+  }
+
+  goBack() {
+    this.router.navigateByUrl('/plan');
+    this.formDataService.activeStep('plan');
   }
 }

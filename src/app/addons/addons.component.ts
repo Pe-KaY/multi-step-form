@@ -39,6 +39,7 @@ export class AddonsComponent {
   ];
 
   addonForm!: FormGroup;
+  isMonthly!: true | false;
   // selectedAddons: any;
 
   constructor(
@@ -54,6 +55,9 @@ export class AddonsComponent {
     }
     console.log('controls: ', controls);
     this.addonForm = this.fb.group(controls);
+
+    this.isMonthly =
+      this.formDataService.getFormData().billingPeriod === 'monthly';
   }
 
   nextStep() {

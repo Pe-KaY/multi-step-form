@@ -16,7 +16,6 @@
         <div class="addon__title-and-desc">
           <input
             [formControlName]="addon.name"
-
             type="checkbox"
             name="online-service"
             id="online-service"
@@ -27,7 +26,11 @@
           </div>
         </div>
 
-        <p class="text-purple">+${{ addon.price.monthly }}/yr</p>
+        <p class="text-purple">
+          +${{ isMonthly ? addon.price.monthly : addon.price.yearly }}/{{
+            isMonthly ? "mo" : "yr"
+          }}
+        </p>
       </label>
       }
       <!--  -->

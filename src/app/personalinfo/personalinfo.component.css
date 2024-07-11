@@ -8,9 +8,7 @@
 .form__rightSide_modal {
     width: 80%;
     height: auto;
-    /* background-color: var(--clr-white); */
     padding: 1.25em;
-    /* border-radius: 8px; */
     margin: auto;
     margin-top: -90px;
 }
@@ -18,7 +16,7 @@
     background-color: var(--clr-white);
     border-radius: 8px;
     padding: 20px;
-    /* margin-top: -50px; */    
+    height: 350px;
     
 }
 
@@ -61,13 +59,14 @@
     justify-content: flex-end;
     align-items: flex-end;
     margin-top: 200px;
+    /* position: absolute; */
 }
 .next-btn {
     padding: 0.625em 1.25em;
     font-size: var(--fs-md);
     cursor: pointer;
-   margin-left: auto;
-   margin-top: auto;
+    margin-left: auto;
+    margin-top: auto;
     border: none;
     border-radius: 4px;
     background-color: var(--clr-denim);
@@ -93,6 +92,7 @@
         margin: auto;
         margin-top: -60px;
         padding: 20px;
+        /* position: relative; */
     }
 
     .personalInfo__header > h1 {
@@ -112,89 +112,14 @@
         padding: 8px;
         font-size: 12px;
     }
+
+
   }
   /* small screens */
   @media (min-width: 640px) {
     .container {
       max-width: 640px;
     }
-
-    /* .form__rightSide_modal {
-        max-width: 600px;
-        height: auto;
-        padding: 20px;
-    }
-
-    .personalInfo__header {
-        font-size: 2rem;
-    }
-
-    .personalInfo__header > p {
-        font-size: 1.5rem;
-    }
-
-    .personalInfo__form-inputs {
-        margin-bottom: 25px;
-    }
-
-    .personalInfo__form-inputs > label {
-        font-size: 1.8rem;
-    }
-
-    .personalInfo__form-inputs > input {
-        font-size: 1.8rem;
-        padding: 1em;
-        border-radius: 8px;
-    }
-
-    .next-btn {
-        font-size: 1.5rem;
-        padding: 20px;
-        border-radius: 8px;
-    } */
-  }
-
-/* medium screens */
-@media (min-width: 768px) {
-    .container {
-        max-width: 768px;
-    }
-    /* .form__rightSide_modal {
-        max-width: 640px;
-        margin-top: -100px;
-        height: auto;
-        padding: 20px;
-    }
-
-    .personalInfo__header {
-        font-size: 2rem;
-    }
-
-    .personalInfo__header > p {
-        font-size: 1.5rem;
-    }
-
-    .personalInfo__form-inputs {
-        margin-bottom: 25px;
-    }
-
-    .personalInfo__form-inputs > label {
-        font-size: 1.8rem;
-    }
-
-    .personalInfo__form-inputs > input {
-        font-size: 1.8rem;
-        padding: 1em;
-        border-radius: 8px;
-    }
-
-    .next-btn {
-        font-size: 1.5rem;
-        padding: 20px;
-        border-radius: 8px;
-        bottom: 40px; 
-        right: 60px;
-    } */
 
     }
 
@@ -205,10 +130,11 @@
       padding: 1rem;
     }
     .form__rightSide_modal {
-        max-width: 500px;
+        max-width: 550px;
         margin-top: 10px;
         margin: auto;
     }
+
 
     .personalInfo__header > h1 {
         font-size: var(--fs-xl);
@@ -232,13 +158,14 @@
     }
    
     .btn-background {
-        margin-top: 120px;
+        background-color: none;
+        margin-top: 30px;
     }
 
     .next-btn {
-        padding: 10px;
+        padding: 8px;
         font-size: 1em;
-        margin-right: 25px;
+        margin-right: 20px;
     }
   }
 

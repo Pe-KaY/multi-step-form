@@ -85,6 +85,10 @@ section.total {
     justify-content: space-between;
     align-items: center;
 }
+.confirm,
+.go-back {
+    cursor: pointer;
+}
 .confirm {
     width: 100px;
     height: 40px;
@@ -92,6 +96,10 @@ section.total {
     border: none;
     background: var(--bg-secondary);
     color: var(--bg-primary);
+}
+.confirm:active {
+    background: #928CFF;
+    /* transition: all 300ms ease; */
 }
 .go-back {
     border: none;
@@ -109,8 +117,12 @@ section.total {
     font-weight: 600;
     
 }
-.component_summary_container > div:first-child > div > :last-child {
+.arcade a {
     color: var(--text-clr-secondary);
+    cursor: pointer;
+}
+.arcade a:active {
+    color: purple;
 }
 .component_summary_container > div > :last-child {
     color: #022959;

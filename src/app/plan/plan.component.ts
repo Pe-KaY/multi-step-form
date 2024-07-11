@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormDataService } from '../service/form-data.service';
-import { FormData } from '../interfaces/form-data';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,15 +14,30 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './plan.component.html',
-  styleUrl: './plan.component.css',
+  styleUrls: ['./plan.component.css'],
 })
 export class PlanComponent implements OnInit {
   PlanSelectionForm!: FormGroup;
   billingPeriod = 'monthly';
   plans = [
-    { name: 'Arcade', price: '$9', icon: '../../assets/icon-arcade.svg' },
-    { name: 'Advanced', price: '$12', icon: '../../assets/icon-advanced.svg' },
-    { name: 'Pro', price: '$15', icon: '../../assets/icon-pro.svg' },
+    {
+      name: 'Arcade',
+      priceMonthly: 9,
+      priceYearly: 90,
+      icon: '../../assets/icon-arcade.svg',
+    },
+    {
+      name: 'Advanced',
+      priceMonthly: 12,
+      priceYearly: 120,
+      icon: '../../assets/icon-advanced.svg',
+    },
+    {
+      name: 'Pro',
+      priceMonthly: 15,
+      priceYearly: 150,
+      icon: '../../assets/icon-pro.svg',
+    },
   ];
 
   constructor(
@@ -38,15 +52,21 @@ export class PlanComponent implements OnInit {
       billingPeriod: [this.billingPeriod, Validators.required],
     });
 
-    const saveData: FormData = this.formDataService.getFormData();
-    if (saveData) {
-      this.PlanSelectionForm.patchValue(saveData);
-      this.billingPeriod = saveData.billingPeriod || this.billingPeriod;
+    const savedData = this.formDataService.getFormData();
+    if (savedData) {
+      this.PlanSelectionForm.patchValue(savedData);
+      this.billingPeriod = savedData.billingPeriod || this.billingPeriod;
     }
   }
 
-  onBillingPeriodChange() {
-    this.billingPeriod = this.PlanSelectionForm.get('billingPeriod')?.value;
+  selectPlan(plan: string) {
+    this.PlanSelectionForm.patchValue({ selectedPlan: plan });
+  }
+
+  toggleBillingPeriod() {
+    const newPeriod = this.billingPeriod === 'monthly' ? 'yearly' : 'monthly';
+    this.PlanSelectionForm.patchValue({ billingPeriod: newPeriod });
+    this.billingPeriod = newPeriod;
   }
 
   goBack() {
@@ -55,8 +75,28 @@ export class PlanComponent implements OnInit {
 
   nextStep() {
     if (this.PlanSelectionForm.valid) {
-      this.formDataService.updateFormData(this.PlanSelectionForm.value);
-      this.router.navigate(['/addons']);
+      const selectedPlanName =
+        this.PlanSelectionForm.get('selectedPlan')?.value;
+      const billingPeriod = this.PlanSelectionForm.get('billingPeriod')?.value;
+      const selectedPlan = this.plans.find(
+        (plan) => plan.name === selectedPlanName
+      );
+
+      if (selectedPlan) {
+        const planPrice =
+          billingPeriod === 'monthly'
+            ? selectedPlan.priceMonthly
+            : selectedPlan.priceYearly;
+        const planDetails = {
+          billingPeriod,
+          selectedPlan: selectedPlanName,
+          planPrice,
+        };
+        console.log(planDetails);
+        this.formDataService.updateFormData(this.PlanSelectionForm.value);
+        console.log(this.PlanSelectionForm.value);
+        // this.router.navigate(['/addons']);
+      }
     }
   }
 }

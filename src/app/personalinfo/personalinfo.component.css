@@ -33,10 +33,11 @@
 }
 
 .personalInfo__form-inputs {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-bottom: 1em;
-    gap: 3px;
+    gap: 10px;
 }
 
 .personalInfo__form-inputs > label {
@@ -48,6 +49,10 @@
     border: 1px solid var(--clr-light-grey);
     font-size: 1rem;
     cursor: pointer;
+}
+
+.personalInfo__form-inputs > input.error-outline {
+    outline: 2px solid var(--clr-red);
 }
 
 .btn-background {
@@ -74,12 +79,17 @@
 }
 
 /* active and hover effects */
-.personalInfo__form-inputs > input:active {
-    border-color: aqua;
-    /* border-color: var(--clr-purple); */
+.personalInfo__form-inputs > input:focus {
+    outline: 3px solid var(--clr-purple);
 }
 
 
+.input-error {
+    color: var(--clr-red);
+    position: absolute;
+    right: 0;
+    font-weight: 600;
+}
 
 /* MEDIA QUERIES */
 @media (min-width: 475px) {
@@ -144,11 +154,11 @@
         font-size: 1rem;
     }
     .personalInfo__form-inputs{
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .personalInfo__form-inputs > label {
-        font-size: 14px;
+        font-size: var(--fs-md);
     }
 
     .personalInfo__form-inputs > input{
@@ -169,7 +179,6 @@
     }
   }
 
-  .input-error {
-    border-color: var(--clr-red);
-    outline-color: var(--clr-red);
-  }
+  .error-outline {
+    outline: 2px solid var(--clr-red);
+}

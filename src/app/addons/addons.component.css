@@ -157,6 +157,13 @@ button.nextStep {
   padding: 10px;
   border-radius: 8px;
 }
+button:disabled, button:disabled:hover {
+  cursor: not-allowed;
+  opacity: .3;
+}
+button:hover{
+  opacity: .8;
+}
 
 button.goBack {
   background: none;

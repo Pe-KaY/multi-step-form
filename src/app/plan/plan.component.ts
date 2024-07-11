@@ -95,7 +95,7 @@ export class PlanComponent implements OnInit {
         console.log(planDetails);
         this.formDataService.updateFormData(this.PlanSelectionForm.value);
         console.log(this.PlanSelectionForm.value);
-        // this.router.navigate(['/addons']);
+        this.router.navigate(['/addons']);
       }
     }
   }

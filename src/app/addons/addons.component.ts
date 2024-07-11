@@ -116,8 +116,6 @@ export class AddonsComponent {
     });
     this.formDataService.activeStep('summary');
 
-    // if (this.addonForm.valid) {
-    // }
   }
 
   goBack() {

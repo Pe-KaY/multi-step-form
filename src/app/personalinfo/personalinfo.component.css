@@ -16,7 +16,7 @@
     background-color: var(--clr-white);
     border-radius: 8px;
     padding: 20px;
-    height: 350px;
+    height: 380px;
     
 }
 
@@ -58,7 +58,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    margin-top: 200px;
+    margin-top: 150px;
     /* position: absolute; */
 }
 .next-btn {
@@ -159,12 +159,12 @@
    
     .btn-background {
         background-color: none;
-        margin-top: 30px;
+        margin-top: 70px;
     }
 
     .next-btn {
-        padding: 8px;
-        font-size: 1em;
+        padding: 10px;
+        font-size: 1rem;
         margin-right: 20px;
     }
   }

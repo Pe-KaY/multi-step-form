@@ -32,7 +32,7 @@ export class SummaryComponent implements OnInit{
     }
     // this.formService.updateFormData(something);
     this.finalDataReview = this.formService.getFormData();
-    console.log(this.finalDataReview); 
+    console.log('received data: ', this.finalDataReview.addons); 
   }
 
   routeToPlan () {

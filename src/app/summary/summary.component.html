@@ -30,17 +30,25 @@
             
                 </div>
                 <!-- selected addons -->
-                <div class="online_service">
-                    <!-- online service -->
-                    <p>Online service</p> <!-- interpolate this -->
-                    <p>+$1/mo</p> <!-- interpolate this -->
+                @for (selectedAddons of finalDataReview.addons; track $index) {
+                    <div class="online_service">
+                        <!-- online service -->
+                        <p> {{ selectedAddons.name}} </p> <!-- interpolate this -->
+                        <p> +${{selectedAddons.price.monthly}}/mo </p> <!-- interpolate this -->
+                    </div>
+                }
+                 
+                <!-- <div class="online_service">
+                    <!-- online service --
+                    <p>Online service</p> <!-- interpolate this --
+                    <p>+$1/mo</p> <!-- interpolate this --
                 </div>
     
                 <div class="larger_storage">
-                    <!-- large storage -->
-                    <p>Larger storage</p> <!-- interpolate this -->
-                    <p>+$2/mo</p> <!-- interpolate this -->
-                </div>
+                    <!-- large storage --
+                    <p>Larger storage</p> <!-- interpolate this --
+                    <p>+$2/mo</p> <!-- interpolate this --
+                </div> -->
             
             </section>
             

@@ -7,6 +7,8 @@ import {
   FormArray,
   ReactiveFormsModule,
   Validators,
+  ValidatorFn,
+  AbstractControl,
 } from '@angular/forms';
 
 @Component({
@@ -40,6 +42,7 @@ export class AddonsComponent {
 
   addonForm!: FormGroup;
   isMonthly!: true | false;
+  canGoNext = false;
   // selectedAddons: any;
 
   constructor(
@@ -51,7 +54,7 @@ export class AddonsComponent {
   ngOnInit() {
     let controls: { [key: string]: any } = {};
     for (let addon of this.addonsList) {
-      controls[addon.name] = [false, Validators.required];
+      controls[addon.name] = ['', Validators.required];
     }
     console.log('controls: ', controls);
     this.addonForm = this.fb.group(controls);
@@ -60,16 +63,38 @@ export class AddonsComponent {
       this.formDataService.getFormData().billingPeriod === 'monthly';
   }
 
-  nextStep() {
-    console.log('Moving to next steps ', this.addonForm.value);
-
-    if (this.addonForm.valid) {
-      this.formDataService.updateFormData(this.addonForm.value);
-      this.router.navigateByUrl('/summary');
-    }
+  atLeastOneValidator(): boolean {
+    console.log("form validator form: ",this.addonForm.controls )
+    return Object.entries(this.addonForm.controls).some(([key, control]) => {
+      if (control.status === 'VALID' && control.value === true) {
+        return true;
+      }
+      return false;
+    });
   }
 
-  goBack() {
-    this.router.navigateByUrl('/plan');
+  checkValidity() {
+    this.canGoNext = this.atLeastOneValidator();
+    console.log(this.atLeastOneValidator());
+    console.log('this.canGoNext: ', this.canGoNext);
+  }
+  nextStep() {
+    console.log(
+      'Moving to next steps ',
+      this.addonForm.value,
+      'form valid : ',
+      this.addonForm.valid
+    );
+    this.router.navigateByUrl('/summary');
+    this.formDataService.updateFormData(this.addonForm.value);
+    this.formDataService.activeStep('summary');
+    
+    // if (this.addonForm.valid) {
+      // }
+    }
+    
+    goBack() {
+      this.router.navigateByUrl('/plan');
+      this.formDataService.activeStep('plan');
   }
 }

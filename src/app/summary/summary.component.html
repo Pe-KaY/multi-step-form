@@ -18,7 +18,7 @@
                         <p>
                             Arcade (Monthly)
                         </p>
-                        <a href="#">Change</a>
+                        <a (click)="routeToPlan()">Change</a>
                     </div>
             
                     <!-- charges -->
@@ -50,8 +50,8 @@
     
         <!-- navigation button -->
         <section class="component_buttons">
-            <button class="go-back">Go Back</button>
-            <button class="confirm">Confirm</button>
+            <button class="go-back" (click)="routeBack()">Go Back</button>
+            <button class="confirm" (click)="formCompleted()" >Confirm</button>
         </section> 
     }
 
@@ -65,4 +65,6 @@
         </section>
     }
 </div>
+
+
 

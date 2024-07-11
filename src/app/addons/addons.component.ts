@@ -59,9 +59,13 @@ export class AddonsComponent {
   nextStep() {
     console.log('Moving to next steps ', this.addonForm.value);
 
-    // if (this.addonForm.valid) {
-    //   this.formDataService.updateFormData(this.addonForm.value);
-    //   this.router.navigateByUrl(['/summary']);
-    // }
+    if (this.addonForm.valid) {
+      this.formDataService.updateFormData(this.addonForm.value);
+      this.router.navigateByUrl('/summary');
+    }
+  }
+
+  goBack() {
+    this.router.navigateByUrl('/plan');
   }
 }

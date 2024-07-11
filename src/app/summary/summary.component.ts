@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-summary',
@@ -7,8 +8,28 @@ import { Component } from '@angular/core';
   templateUrl: './summary.component.html',
   styleUrl: './summary.component.css'
 })
-export class SummaryComponent {
+export class SummaryComponent implements OnInit{
 
-  isConfirmed = false;
+  isConfirmed: boolean = false;
+
+  constructor(private router: Router) {};
+  
+  ngOnInit(): void {
+    this.isConfirmed;
+  }
+
+  routeToPlan () {
+    this.router.navigateByUrl('/plan');
+  }
+
+  formCompleted () {
+    this.isConfirmed = true;
+  }
+
+  routeBack () {
+    this.router.navigateByUrl('/addons');
+  }
+
+  
 
 }

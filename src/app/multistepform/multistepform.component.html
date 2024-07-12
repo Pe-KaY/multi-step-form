@@ -1,0 +1,36 @@
+<div class="form__container container">
+  <div class="form__leftSide">
+    <div class="form__leftside-steps">
+      <span class="form__leftside-circlenums" [class.isActive]="stepService.stepOne">1</span>
+      <div class="form__leftside-text">
+        <p>STEP 1</p>
+        <h2>YOUR INFO</h2>
+      </div>
+    </div>
+    <div class="form__leftside-steps">
+      <span class="form__leftside-circlenums" [class.isActive]="stepService.stepTwo">2</span>
+      <div class="form__leftside-text">
+        <p>STEP 2</p>
+        <h2>SELECT PLAN</h2>
+      </div>
+    </div>
+    <div class="form__leftside-steps">
+      <span class="form__leftside-circlenums" [class.isActive]="stepService.stepThree">3</span>
+      <div class="form__leftside-text">
+        <p>STEP 3</p>
+        <h2>ADD-ONS</h2>
+      </div>
+    </div>
+    <div class="form__leftside-steps">
+      <span class="form__leftside-circlenums" [class.isActive]="stepService.stepFour">4</span>
+      <div class="form__leftside-text">
+        <p>STEP 4</p>
+        <h2>SUMMARY</h2>
+      </div>
+    </div>
+  </div>
+  <div class="form__rightSide">
+    <!-- GUYS render your component here -->
+    <router-outlet />
+  </div>
+</div>

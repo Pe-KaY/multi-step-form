@@ -1,0 +1,112 @@
+<div class="planContainer">
+  <div class="planContainer__details">
+    <div class="planContainer__text">
+      <h3>Select you plan</h3>
+      <p>You have the option of monthly or yearly billing.</p>
+    </div>
+
+    <!-- form updates -->
+    <form class="form" [formGroup]="PlanSelectionForm" (ngSubmit)="nextStep()">
+      <div class="planDiv">
+        @for (plan of plans; track $index) {
+
+        <button
+          class="plan"
+          type="button"
+          [class.selected]="
+            PlanSelectionForm.get('selectedPlan')?.value === plan.name
+          "
+          (click)="selectPlan(plan.name)"
+        >
+          <div class="plan-type__img">
+            <img [src]="plan.icon" [alt]="plan.name + ' icon'" />
+          </div>
+          <div class="plan-type__text">
+            <p class="name">{{ plan.name }}</p>
+            <p class="amount">
+              ${{
+                billingPeriod === "monthly"
+                  ? plan.priceMonthly
+                  : plan.priceYearly
+              }}
+              /{{ billingPeriod === "monthly" ? "mo" : "yr"}}
+            </p>
+            @if (billingPeriod === 'yearly') {
+            <p class="duration">12 months free</p>
+            }
+          </div>
+        </button>
+        }
+        <!--<button class="plan">
+         <div class="plan-type__img">
+            <img src="../../assets/icon-arcade.svg" alt="arcade icon" />
+          </div>
+          <div class="plan-type__text">
+            <p class="name">Arcade</p>
+            <p class="amount">$90/yr</p>
+            <p class="duration">2 months free</p>
+          </div>
+        </button>
+        <button class="plan">
+          <div class="plan-type__img">
+            <img src="../../assets/icon-advanced.svg" alt="advanced icon" />
+          </div>
+          <div class="plan-type__text">
+            <p class="name">Advanced</p>
+            <p class="amount">$120/yr</p>
+            <p class="duration">2 months free</p>
+          </div>
+        </button>
+        <button class="plan">
+          <div class="plan-type__img">
+            <img src="../../assets/icon-pro.svg" alt="pro icon" />
+          </div>
+          <div class="plan-type__text">
+            <p class="name">Pro</p>
+            <p class="amount">$150/yr</p>
+            <p class="duration">2 months free</p>
+          </button>
+          </div>-->
+      </div>
+
+      <div class="options-container">
+        <div class="options">
+          <span>Monthly</span>
+          <div class="toggle" (click)="toggleBillingPeriod()">
+            <input
+              type="radio"
+              formControlName="billingPeriod"
+              value="monthly"
+              [checked]="billingPeriod === 'monthly'"
+            />
+            <input
+              type="radio"
+              formControlName="billingPeriod"
+              value="yearly"
+              [checked]="billingPeriod === 'yearly'"
+            />
+            <span
+              class="toggle-btn"
+              [class.yearly]="billingPeriod === 'yearly'"
+            ></span>
+          </div>
+          <span>Yearly</span>
+        </div>
+      </div>
+      <div class="planButtons">
+        <div class="planContainer__button-div">
+          <button class="btn goBack" type="button" (click)="goBack()">
+            Go back
+          </button>
+          <button
+            class="btn nextStep"
+            type="submit"
+            [disabled]="!PlanSelectionForm.valid"
+          >
+            Next Step
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

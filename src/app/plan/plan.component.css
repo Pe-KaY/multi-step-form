@@ -1,0 +1,253 @@
+.planContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* gap: 50px; */
+  height: 100%;
+}
+
+.planContainer .planContainer__details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 85%;
+  margin-inline: auto;
+  /* height: 566px; */
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: -100px;
+  background-color: var(--bg-primary);
+  box-shadow: 0px 25px 40px -20px rgba(0, 0, 0, 0.1);
+}
+
+.planContainer__details .planContainer__text {
+  width: 85%;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 5px;
+  /* height: 80px; */
+}
+
+.planContainer__details .form {
+  display: relative;
+  width: 85%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.planContainer__details .planContainer__text h3 {
+  font-size: var(--fs-xl);
+  color: var(--text-clr-primary);
+}
+
+.planContainer__details .planContainer__text p {
+  font-size: var(--fs-lg);
+  color: var(--text-clr-secondary);
+  font-weight: 500;
+}
+
+.planContainer__details .planDiv {
+  display: flex;
+  flex-direction: column;
+  /* padding: 0.7rem; */
+  gap: 1rem;
+  /* border-radius: 10px; */
+  /* border: 2px solid var(--clr-grey); */
+  /* background: none; */
+}
+
+.planDiv .plan {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  gap: 0.7rem;
+  border-radius: 10px;
+  border: 2px solid var(--clr-grey);
+  background: none;
+}
+
+.planDiv .plan.selected {
+  border: 2px solid var(--text-clr-purple);
+  background-color: var(--bg-accent);
+}
+
+.planContainer__details .plan:hover,
+.planContainer__details .plan:active {
+  border: 2px solid var(--text-clr-purple);
+  background-color: var(--bg-accent);
+  cursor: pointer;
+}
+
+.plan .plan-type__text {
+  display: inherit;
+  flex-direction: column;
+  text-align: left;
+  gap: 7px;
+}
+
+.plan .plan-type__text .name {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--text-clr-primary);
+}
+
+.plan .plan-type__text .amount {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--text-clr-secondary);
+}
+
+.plan .plan-type__text .duration {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--text-clr-primary);
+}
+
+.planContainer__details .options-container {
+  width: 100%;
+  background-color: var(--bg-accent);
+  border-radius: 10px;
+  margin-inline: auto;
+  padding: 10px 30px;
+}
+
+.options-container .options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+
+.options .toggle {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  height: 25px;
+  background-color: var(--clr-denim);
+  border-radius: 25px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.options .toggle input[type="radio"] {
+  display: none;
+}
+
+.options .toggle .toggle-btn {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.1s;
+  margin-left: 3px;
+}
+
+.options .toggle .toggle-btn.yearly {
+  transform: translateX(25px);
+}
+
+.planButtons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 85%;
+  background-color: var(--bg-primary);
+  padding: 10px 0;
+}
+
+.planContainer .planContainer__button-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin-inline: auto;
+
+  /* background-color: var(--bg-primary); */
+}
+
+/* .planContainer .planContainer__button-div .btn {
+  padding: 5px;
+  font-size: var(--fs-lg);
+  font-weight: 400;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+} */
+
+/* button.nextStep {
+  background-color: var(--clr-denim);
+  color: var(--bg-primary);
+  padding: 10px;
+  border-radius: 8px;
+} */
+
+button.goBack {
+  background: none;
+  color: var(--clr-grey);
+  font-weight: 500;
+}
+
+button.goBack:hover {
+  color: var(--clr-denim);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+  .planContainer {
+    position: static;
+  }
+  .planContainer .planContainer__details {
+    background: none;
+    box-shadow: none;
+    margin-top: 0;
+    height: 100%;
+  }
+
+  .planButtons {
+    position: static;
+    width: 100%;
+    margin: 0;
+  }
+
+  .planContainer .planContainer__button-div {
+    width: 100%;
+    position: static;
+  }
+
+  .planContainer__details .planDiv {
+    /* display: flex; */
+    flex-direction: row;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .planDiv .plan {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    height: 200px;
+  }
+}

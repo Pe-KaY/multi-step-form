@@ -4,6 +4,7 @@ export interface FormData {
   phone?: string;
   selectedPlan?: string;
   billingPeriod?: string;
+  planPrice?: number | null;
   addons?: {
     name: string;
     description: string;

@@ -27,9 +27,9 @@
             
                     <!-- charges -->
                      @if (finalDataReview.billingPeriod === 'monthly') {
-                         <p>${{selectedPlanPrice}}/mo</p> <!-- interpolate this -->
+                         <p>${{finalDataReview.planPrice}}/mo</p> <!-- interpolate this -->
                     } @else {
-                        <p>${{selectedPlanPrice}}/yr</p> <!-- interpolate this -->
+                        <p>${{finalDataReview.planPrice}}/yr</p> <!-- interpolate this -->
                      }
             
                 </div>

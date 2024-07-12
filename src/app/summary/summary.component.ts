@@ -15,7 +15,7 @@ export class SummaryComponent implements OnInit{
 
   isConfirmed: boolean = false;
   finalDataReview: FormData = {};
-  selectedPlanPrice:number = 9;
+  selectedPlanPrice:number = 0;
   totalPrice:number = 0;
 
   constructor(
@@ -27,7 +27,8 @@ export class SummaryComponent implements OnInit{
     this.isConfirmed;
     
     this.finalDataReview = this.formService.getFormData();
-    // console.log('received data: ', this.finalDataReview.addons); 
+    this.selectedPlanPrice = this.finalDataReview.planPrice as number;
+    console.log('received data: ', this.finalDataReview); 
 
     // get the prices and calculate the total sum
     if (!this.finalDataReview.addons) return;

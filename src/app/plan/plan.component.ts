@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { FormDataService } from '../service/form-data.service';
 import { CommonModule } from '@angular/common';
+import { FormData } from '../interfaces/form-data';
 
 @Component({
   selector: 'app-plan',
@@ -19,6 +20,9 @@ import { CommonModule } from '@angular/common';
 export class PlanComponent implements OnInit {
   PlanSelectionForm!: FormGroup;
   billingPeriod = 'monthly';
+  planPrice!: number;
+  // planPrice = this.billingPeriod === 'monthly'? selectedPlan.priceMonthly : selectedPlan.priceYearly;
+
   plans = [
     {
       name: 'Arcade',
@@ -83,23 +87,20 @@ export class PlanComponent implements OnInit {
       const selectedPlan = this.plans.find(
         (plan) => plan.name === selectedPlanName
       );
+      const price = selectedPlan
+        ? billingPeriod === 'monthly'
+          ? selectedPlan.priceMonthly
+          : selectedPlan.priceYearly
+        : null;
 
-      if (selectedPlan) {
-        const planPrice =
-          billingPeriod === 'monthly'
-            ? selectedPlan.priceMonthly
-            : selectedPlan.priceYearly;
-        const planDetails = {
-          billingPeriod,
-          selectedPlan: selectedPlanName,
-          planPrice,
-        };
-        console.log(planDetails);
-        this.formDataService.updateFormData(this.PlanSelectionForm.value);
-        console.log(this.PlanSelectionForm.value);
-        this.router.navigate(['/addons']);
-        this.formDataService.activeStep('add-ons');
-      }
+      const data: FormData = {
+        billingPeriod: billingPeriod,
+        selectedPlan: selectedPlan?.name,
+        planPrice: price,
+      };
+
+      this.formDataService.updateFormData(data);
+      this.router.navigate(['/addons']);
     }
   }
 }

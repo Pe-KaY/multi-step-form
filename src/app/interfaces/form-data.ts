@@ -2,6 +2,6 @@ export interface FormData {
   name?: string;
   email?: string;
   phone?: string;
-  selectectedPlan?: string;
+  selectedPlan?: string;
   billingPeriod?: string;
 }

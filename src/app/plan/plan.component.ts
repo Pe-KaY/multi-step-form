@@ -19,6 +19,9 @@ import { CommonModule } from '@angular/common';
 export class PlanComponent implements OnInit {
   PlanSelectionForm!: FormGroup;
   billingPeriod = 'monthly';
+  planPrice!: number;
+  // planPrice = this.billingPeriod === 'monthly'? selectedPlan.priceMonthly : selectedPlan.priceYearly;
+
   plans = [
     {
       name: 'Arcade',
@@ -50,6 +53,7 @@ export class PlanComponent implements OnInit {
     this.PlanSelectionForm = this.fb.group({
       selectedPlan: ['', Validators.required],
       billingPeriod: [this.billingPeriod, Validators.required],
+      
     });
 
     const savedData = this.formDataService.getFormData();
@@ -85,10 +89,6 @@ export class PlanComponent implements OnInit {
       );
 
       if (selectedPlan) {
-        const planPrice =
-          billingPeriod === 'monthly'
-            ? selectedPlan.priceMonthly
-            : selectedPlan.priceYearly;
         const planDetails = {
           billingPeriod,
           selectedPlan: selectedPlanName,

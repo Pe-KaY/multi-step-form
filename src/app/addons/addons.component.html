@@ -16,7 +16,7 @@
         <div class="addon__title-and-desc">
           <input
             [formControlName]="addon.name"
-
+            (change)="checkValidity()"
             type="checkbox"
             name="online-service"
             id="online-service"
@@ -27,7 +27,11 @@
           </div>
         </div>
 
-        <p class="text-purple">+${{ addon.price.monthly }}/yr</p>
+        <p class="text-purple">
+          +${{ isMonthly ? addon.price.monthly : addon.price.yearly }}/{{
+            isMonthly ? "mo" : "yr"
+          }}
+        </p>
       </label>
       }
       <!--  -->
@@ -35,7 +39,7 @@
   </div>
 
   <div class="addon__footer">
-    <button class="btn-ghost">Go back</button>
-    <button class="btn" type="submit">Next Step</button>
+    <button class="btn-ghost" (click)="goBack()">Go back</button>
+    <button class="btn" type="submit" [disabled]="!canGoNext">Next Step</button>
   </div>
 </form>

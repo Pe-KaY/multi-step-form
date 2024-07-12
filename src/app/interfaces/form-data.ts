@@ -4,4 +4,10 @@ export interface FormData {
   phone?: string;
   selectedPlan?: string;
   billingPeriod?: string;
+  addons?: {
+    name: string;
+    description: string;
+    checked: boolean;
+    price: { monthly: number; yearly: number };
+  }[];
 }

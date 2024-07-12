@@ -7,7 +7,19 @@ import {
   FormArray,
   ReactiveFormsModule,
   Validators,
+  ValidatorFn,
+  AbstractControl,
 } from '@angular/forms';
+
+interface Addon {
+  name: string;
+  description: string;
+  price: {
+    monthly: number;
+    yearly: number;
+  };
+  checked: boolean;
+}
 
 @Component({
   selector: 'app-addons',
@@ -39,7 +51,9 @@ export class AddonsComponent {
   ];
 
   addonForm!: FormGroup;
-  // selectedAddons: any;
+  isMonthly!: true | false;
+  canGoNext = false;
+  selectedAddons: Addon[] = [];
 
   constructor(
     private formDataService: FormDataService,
@@ -50,18 +64,62 @@ export class AddonsComponent {
   ngOnInit() {
     let controls: { [key: string]: any } = {};
     for (let addon of this.addonsList) {
-      controls[addon.name] = [false, Validators.required];
+      controls[addon.name] = ['', Validators.required];
     }
     console.log('controls: ', controls);
     this.addonForm = this.fb.group(controls);
+
+    this.isMonthly =
+      this.formDataService.getFormData().billingPeriod === 'monthly';
+  }
+
+  atLeastOneValidator(): boolean {
+    console.log('form validator form: ', this.addonForm.controls);
+    return Object.entries(this.addonForm.controls).some(([key, control]) => {
+      if (control.status === 'VALID' && control.value === true) {
+        return true;
+      }
+      return false;
+    });
+  }
+
+  checkValidity() {
+    this.canGoNext = this.atLeastOneValidator();
+    // console.log(this.atLeastOneValidator());
+    // console.log('this.canGoNext: ', this.canGoNext);
+  }
+
+  getSelectedAddonsData() {
+    let selectedAddons = [];
+    for (let key in this.addonForm.value) {
+      if (this.addonForm.value[key]) {
+        const addon = this.addonsList.find((addon) => addon.name === key);
+        if (addon) {
+          selectedAddons.push(addon);
+        }
+      }
+    }
+    return selectedAddons;
   }
 
   nextStep() {
-    console.log('Moving to next steps ', this.addonForm.value);
+    console.log(
+      'Moving to next steps ',
+      this.addonForm.value,
+      'form valid : ',
+      this.addonForm.valid
+    );
+    console.log('selected addons: ', this.getSelectedAddonsData());
+    this.router.navigateByUrl('/summary');
+    this.formDataService.updateFormData({
+      addons: this.getSelectedAddonsData(),
+    });
+    this.formDataService.activeStep('summary');
 
-    // if (this.addonForm.valid) {
-    //   this.formDataService.updateFormData(this.addonForm.value);
-    //   this.router.navigateByUrl(['/summary']);
-    // }
+  }
+
+  goBack() {
+    this.router.navigateByUrl('/plan');
+    this.formDataService.activeStep('plan');
   }
 }

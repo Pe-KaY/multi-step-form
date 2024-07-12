@@ -11,6 +11,8 @@ export class FormDataService {
 
   updateFormData(data: Partial<FormData>) {
     this.formData = { ...this.formData, ...data };
+    console.log(data);
+    console.log(this.formData);
   }
 
   getFormData(): FormData {

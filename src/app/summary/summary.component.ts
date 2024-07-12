@@ -28,7 +28,7 @@ export class SummaryComponent implements OnInit{
     
     this.finalDataReview = this.formService.getFormData();
     this.selectedPlanPrice = this.finalDataReview.planPrice as number;
-    console.log('received data: ', this.finalDataReview); 
+    // console.log('received data: ', this.finalDataReview); 
 
     // get the prices and calculate the total sum
     if (!this.finalDataReview.addons) return;
@@ -59,22 +59,7 @@ export class SummaryComponent implements OnInit{
     this.router.navigateByUrl('/addons');
   }
 
-  // firstLetterCap (word : string) {
-  //   if (word.length === 0) {
-  //     return word; // handle empty string case
-  //   }
   
-  //   return word.replace(word.at(0), word.at(0)?.toUpperCase());
-  // }
-
-  // firstLetterCap(word: string) {
-  //   if (word.length === 0) {
-  //     return word; // handle empty string case
-  //   }
-  //   const firstChar = word.charAt(0);
-  //   return word.replace(firstChar, firstChar.toUpperCase());
-  // }
-
   
 
 }

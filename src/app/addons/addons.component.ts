@@ -1,14 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormDataService } from '../service/form-data.service';
 import { Router } from '@angular/router';
 import {
   FormBuilder,
   FormGroup,
-  FormArray,
   ReactiveFormsModule,
   Validators,
-  ValidatorFn,
-  AbstractControl,
 } from '@angular/forms';
 
 interface Addon {
@@ -26,10 +23,10 @@ interface Addon {
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './addons.component.html',
-  styleUrl: './addons.component.css',
+  styleUrls: ['./addons.component.css'],
 })
-export class AddonsComponent {
-  addonsList = [
+export class AddonsComponent implements OnInit {
+  addonsList: Addon[] = [
     {
       name: 'Online service',
       description: 'Access to multiplayer games',
@@ -51,7 +48,7 @@ export class AddonsComponent {
   ];
 
   addonForm!: FormGroup;
-  isMonthly!: true | false;
+  isMonthly!: boolean;
   canGoNext = false;
   selectedAddons: Addon[] = [];
 
@@ -62,36 +59,38 @@ export class AddonsComponent {
   ) {}
 
   ngOnInit() {
-    let controls: { [key: string]: any } = {};
-    for (let addon of this.addonsList) {
-      controls[addon.name] = ['', Validators.required];
+    const controls: { [key: string]: any } = {};
+    for (const addon of this.addonsList) {
+      controls[addon.name] = [false, Validators.required];
     }
-    console.log('controls: ', controls);
     this.addonForm = this.fb.group(controls);
 
+    // Set isMonthly based on the service data
     this.isMonthly =
       this.formDataService.getFormData().billingPeriod === 'monthly';
+
+    // Load the selected addons from the service
+    const selectedAddons = this.formDataService.getFormData()?.addons ?? [];
+    selectedAddons.forEach((addon: Addon) => {
+      if (this.addonForm.controls[addon.name]) {
+        this.addonForm.controls[addon.name].setValue(true);
+      }
+    });
   }
 
   atLeastOneValidator(): boolean {
-    console.log('form validator form: ', this.addonForm.controls);
     return Object.entries(this.addonForm.controls).some(([key, control]) => {
-      if (control.status === 'VALID' && control.value === true) {
-        return true;
-      }
-      return false;
+      return control.status === 'VALID' && control.value === true;
     });
   }
 
   checkValidity() {
     this.canGoNext = this.atLeastOneValidator();
-    // console.log(this.atLeastOneValidator());
-    // console.log('this.canGoNext: ', this.canGoNext);
   }
 
   getSelectedAddonsData() {
-    let selectedAddons = [];
-    for (let key in this.addonForm.value) {
+    const selectedAddons = [];
+    for (const key in this.addonForm.value) {
       if (this.addonForm.value[key]) {
         const addon = this.addonsList.find((addon) => addon.name === key);
         if (addon) {
@@ -103,19 +102,10 @@ export class AddonsComponent {
   }
 
   nextStep() {
-    console.log(
-      'Moving to next steps ',
-      this.addonForm.value,
-      'form valid : ',
-      this.addonForm.valid
-    );
-    console.log('selected addons: ', this.getSelectedAddonsData());
+    const selectedAddons = this.getSelectedAddonsData();
+    this.formDataService.updateFormData({ addons: selectedAddons });
     this.router.navigateByUrl('/summary');
-    this.formDataService.updateFormData({
-      addons: this.getSelectedAddonsData(),
-    });
     this.formDataService.activeStep('summary');
-
   }
 
   goBack() {

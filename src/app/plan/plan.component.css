@@ -207,7 +207,7 @@ button.goBack {
 button.goBack:hover {
   color: var(--clr-denim);
   font-weight: 700;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 @media (min-width: 1024px) {

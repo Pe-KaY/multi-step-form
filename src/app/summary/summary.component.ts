@@ -3,6 +3,7 @@ import { Router, RouterLink } from '@angular/router';
 // import { FormDataService } from '../service/form-data.service';
 import { FormDataService } from '../service/form-data.service';
 import { FormData } from '../interfaces/form-data';
+import { setTimeout } from 'node:timers/promises';
 
 @Component({
   selector: 'app-summary',
@@ -13,6 +14,9 @@ import { FormData } from '../interfaces/form-data';
 })
 export class SummaryComponent implements OnInit{
 
+  // pk declared this. this is gona be used to restart the app upon completeion page
+  theTimer!: number
+
   isConfirmed: boolean = false;
   finalDataReview: FormData = {};
   selectedPlanPrice:number = 0;
@@ -22,6 +26,7 @@ export class SummaryComponent implements OnInit{
     private router: Router,
     private formService: FormDataService,
   ) {};
+  
   
   ngOnInit(): void {
     this.isConfirmed;
@@ -49,14 +54,21 @@ export class SummaryComponent implements OnInit{
 
   routeToPlan () {
     this.router.navigateByUrl('/plan');
+    this.formService.specialStep()
   }
 
   formCompleted () {
     this.isConfirmed = true;
+    this.formService.resetFormData()
+    this.theTimer = window.setTimeout(() => {
+      this.router.navigateByUrl('')
+      this.formService.activeStep('personal')
+    }, 4000);
   }
 
   routeBack () {
     this.router.navigateByUrl('/addons');
+    this.formService.activeStep('add-ons')
   }
 
   

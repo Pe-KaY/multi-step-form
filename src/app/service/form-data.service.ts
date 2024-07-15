@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormData } from '../interfaces/form-data';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -52,6 +53,14 @@ export class FormDataService {
     this.stepThree = false;
     this.stepFour = false;
   }
+
+  //special stepper call
+  specialStep(): void {
+    this.stepsReset();
+    this.stepTwo = true;
+  }
+
+// incase page refreshes function
 
   // Stepper Functions ends here
 

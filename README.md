@@ -1,27 +1,25 @@
 # MultiStepForm
+**Sample preview**
+<img src="./src/assets/preview.jpg" alt="preview of multiStepForm application" width="500px" >
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+## About the app
+A form application with beautiful and well thought out interface. Highly interactive and easy to navigate based on your choice.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Live host
+The link to the site can be access by a click on this [**button**](https://multi-step-form-beta-five.vercel.app/) 👈
 
 ## Build
-
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Tech stack
+<img src="./src/assets/icon-angular.svg" alt="angular svg image" width="100px" >
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Authors
+### Jenef
+- Readme file
+- Final score component
 
-## Running end-to-end tests
+ 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

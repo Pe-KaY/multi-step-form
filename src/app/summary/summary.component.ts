@@ -59,6 +59,7 @@ export class SummaryComponent implements OnInit{
 
   formCompleted () {
     this.isConfirmed = true;
+    this.formService.resetFormData()
     this.theTimer = window.setTimeout(() => {
       this.router.navigateByUrl('')
       this.formService.activeStep('personal')

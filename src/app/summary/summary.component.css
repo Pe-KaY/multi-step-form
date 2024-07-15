@@ -33,7 +33,7 @@
 }
 .component_subtitle {
     font-size: .9rem;
-    color: #D6D9E6;
+    /* color: #D6D9E6; */
     color: var(--clr-grey);
 }
 .component_thank-you {
@@ -49,7 +49,8 @@
 }
 h1 {
     font-size: 2rem;
-    color: #022959;
+    /* color: #022959; */
+    color: var(--text-clr-primary);
 }
 /* .component_thank-you p {
     
@@ -97,7 +98,8 @@ section.total {
     background: var(--bg-secondary);
     color: var(--bg-primary);
 }
-.confirm:active {
+.confirm:active,
+.confirm:hover {
     background: #928CFF;
     /* transition: all 300ms ease; */
 }
@@ -113,7 +115,8 @@ section.total {
     align-items: center;
 }
 .component_summary_container > div:first-child > div > p {
-    color: #022959;
+    /* color: #022959; */
+    color: var(--text-clr-primary);
     font-weight: 600;
     
 }
@@ -123,6 +126,7 @@ section.total {
 }
 .arcade a:active {
     color: purple;
+    color: var(--text-clr-purple);
 }
 .component_summary_container > div > :last-child {
     color: #022959;

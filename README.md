@@ -16,8 +16,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Authors
 ### Jenef
-- Readme file
-- Final score component
+- Summary component
+- Thank you section
 
  
 

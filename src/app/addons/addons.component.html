@@ -12,7 +12,10 @@
     <div class="addon__options">
       <!-- option -->
       @for (addon of addonsList; track addon.name) {
-      <label class="addon__option">
+      <label
+        class="addon__option"
+        [class.addon__option--checked]="addonForm.get(addon.name)?.value"
+      >
         <div class="addon__title-and-desc">
           <input
             [formControlName]="addon.name"

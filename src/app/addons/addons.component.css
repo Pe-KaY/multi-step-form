@@ -42,6 +42,15 @@
   border-radius: 10px;
   border: 1px solid var(--clr-light-grey);
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.addon__option:hover {
+  border-color: var(--clr-purple);
+}
+input[type="checkbox"]:checked .addon__option {
+  border: 1px solid var(--clr-purple);
+  border-color: var(--clr-purple);
 }
 .addon__title-and-desc {
   display: flex;
@@ -157,12 +166,13 @@ button.nextStep {
   padding: 10px;
   border-radius: 8px;
 }
-button:disabled, button:disabled:hover {
+button:disabled,
+button:disabled:hover {
   cursor: not-allowed;
-  opacity: .3;
+  opacity: 0.3;
 }
-button:hover{
-  opacity: .8;
+button:hover {
+  opacity: 0.8;
 }
 
 button.goBack {

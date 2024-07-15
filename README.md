@@ -23,11 +23,26 @@ The link to the site can be access by a click on this [**button**](https://multi
 - Summary component
 - Thank you page
 
+<<<<<<< HEAD
  
 ### Kewa Blay
 - Addons Component.
 
  
+=======
+### Rhoda
+- Personal Info component
+
+ ### Eric Obeng
+ - FormDataService
+ - Plan component UI and functionalities
+
+
+## Paa Kwesi
+- main multistep component
+- Active step highlightt page on the left
+
+>>>>>>> 02b138b3a9570d68208b28e360228f4ed322518f
 
 
 

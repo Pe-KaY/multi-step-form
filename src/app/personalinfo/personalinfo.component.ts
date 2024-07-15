@@ -28,7 +28,7 @@ export class PersonalinfoComponent implements OnInit{
     this.personalInfoForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.pattern(/^[0][2,5][4,5,0,9][0-9]{7}$/)]],
+      phone: ['', [Validators.required, Validators.pattern(/^[0][2,5][4,5,0,9][0-9]{7}$/), Validators.maxLength(10)]],
     })
             
 

@@ -14,7 +14,7 @@ The link to the site can be access by a click on this [**button**](https://multi
 
 ## Local Development
 - Clone or fork the repo. 
-- Cd into the your created directory or folder and open it with the preferred editor of your choice. 
+- Cd into the created directory or folder and open it with the preferred editor of your choice. 
 - Run `npm install` to initialise your local development environment or workspace. 
 - You can run `npm start` or `ng serve` to start your local server and play with the project. 
 

@@ -23,9 +23,16 @@ The link to the site can be access by a click on this [**button**](https://multi
 - Summary component
 - Thank you page
 
+
+ ### Eric Obeng
+ - FormDataService
+ - Plan component UI and functionalities
+
+
 ## Paa Kwesi
 - main multistep component
 - Active step highlightt page on the left
+
 
 
 

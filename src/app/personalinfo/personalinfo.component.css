@@ -63,7 +63,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    margin-top: 150px;
+    margin-top: 70px;
     /* position: absolute; */
 }
 .next-btn {
@@ -72,6 +72,7 @@
     cursor: pointer;
     margin-left: auto;
     margin-top: auto;
+    margin-bottom: 8px;
     border: none;
     border-radius: 4px;
     background-color: var(--clr-denim);
@@ -169,7 +170,7 @@
    
     .btn-background {
         background-color: none;
-        margin-top: 60px;
+        margin-top: 50px;
     }
 
     .next-btn {

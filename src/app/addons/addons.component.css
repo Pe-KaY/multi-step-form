@@ -57,6 +57,9 @@ input[type="checkbox"]:checked .addon__option {
   gap: 1rem;
   align-items: center;
 }
+.addon__option--checked {
+  border: 1.5px solid var(--clr-purple);
+}
 
 .addon__option input[type="checkbox"] {
   width: 18px;

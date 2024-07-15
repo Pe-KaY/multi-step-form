@@ -23,7 +23,11 @@ The link to the site can be access by a click on this [**button**](https://multi
 - Summary component
 - Thank you page
 
- 
+ ### Eric Obeng
+ - FormDataService
+ - Interface
+ - Plan component UI
+ - Plan component functionalities
 
 
 

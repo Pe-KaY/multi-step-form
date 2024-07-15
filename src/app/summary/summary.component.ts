@@ -50,6 +50,7 @@ export class SummaryComponent implements OnInit{
 
   routeToPlan () {
     this.router.navigateByUrl('/plan');
+    this.formService.specialStep()
   }
 
   formCompleted () {
@@ -58,6 +59,7 @@ export class SummaryComponent implements OnInit{
 
   routeBack () {
     this.router.navigateByUrl('/addons');
+    this.formService.activeStep('add-ons')
   }
 
   

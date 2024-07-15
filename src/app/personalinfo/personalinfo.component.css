@@ -63,8 +63,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    /* margin-top: 150px; */
-    position: absolute;
+    margin-top: 180px;
+    /* position: absolute; */
 }
 .next-btn {
     padding: 0.625em 1.25em;

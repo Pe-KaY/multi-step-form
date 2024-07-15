@@ -76,6 +76,9 @@ export class AddonsComponent implements OnInit {
         this.addonForm.controls[addon.name].setValue(true);
       }
     });
+
+    // Check the validity of the form after initializing with selected addons
+    this.checkValidity();
   }
 
   atLeastOneValidator(): boolean {

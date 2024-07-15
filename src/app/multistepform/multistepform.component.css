@@ -47,6 +47,7 @@
   border: 1px solid white;
   color: white;
   font-weight: bold;
+  transition: background-color 1s;
 }
 
 /* step text s*/
